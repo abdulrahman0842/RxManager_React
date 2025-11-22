@@ -1,0 +1,52 @@
+[
+  {
+    "id": "1",
+    "type": "Tablet",
+    "description": "Solid dosage form containing one or more active drugs, typically ingested orally."
+  },
+  {
+    "id": "2",
+    "type": "Capsule",
+    "description": "Dosage form where the drug is enclosed within a soluble shell, usually made of gelatin."
+  },
+  {
+    "id": "3",
+    "type": "Syrup",
+    "description": "Liquid preparation containing a high concentration of sugar, often used for oral administration of liquid medications."
+  },
+  {
+    "id": "4",
+    "type": "Injection",
+    "description": "Sterile liquid preparation administered via needle directly into the body (e.g., intravenous, intramuscular)."
+  },
+  {
+    "id": "5",
+    "type": "Ointment",
+    "description": "Semisolid preparation, greasy in texture, intended for external application to the skin or mucous membranes."
+  },
+  {
+    "id": "6",
+    "type": "Cream",
+    "description": "Semisolid emulsion of oil and water, less greasy than an ointment, used for topical application."
+  },
+  {
+    "id": "7",
+    "type": "Suppository",
+    "description": "Solid dosage form inserted into a body cavity (e.g., rectum, vagina) where it dissolves or melts."
+  },
+  {
+    "id": "8",
+    "type": "Suspension",
+    "description": "Liquid preparation containing fine solid particles dispersed throughout a liquid medium; requires shaking before use."
+  },
+  {
+    "id": "9",
+    "type": "Inhaler",
+    "description": "Device that delivers medication (often in powder or aerosol form) directly to the lungs via the respiratory tract."
+  },
+  {
+    "id": "10",
+    "type": "Drops (Ophthalmic/Otic)",
+    "description": "Sterile liquid solutions intended for administration into the eye (ophthalmic) or ear (otic)."
+  }
+]

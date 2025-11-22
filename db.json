@@ -1,0 +1,185 @@
+{
+    "agencies":[
+  {
+    "id": 101,
+    "name": "Global Marketing Solutions",
+    "gst_no": "27AABCD1234E1Z3",
+    "contact": {
+      "phone": "+91-98765-43210",
+      "email": "contact@globalsolutions.com"
+    },
+    "address": "12, Silicon Avenue, Bengaluru, Karnataka, 560001"
+  },
+  {
+    "id": 102,
+    "name": "Creative Edge Media",
+    "gst_no": "07BXZYZ9876F2W5",
+    "contact": {
+      "phone": "+91-80123-45678",
+      "email": "info@creativeedge.in"
+    },
+    "address": "45/A, Linking Road, Mumbai, Maharashtra, 400052"
+  },
+  {
+    "id": 103,
+    "name": "Digital Bridge Agency",
+    "gst_no": "33CDEFG5678G3Y9",
+    "contact": {
+      "phone": "+91-77000-11223",
+      "email": "support@digitalbridge.net"
+    },
+    "address": "Plot No 8, Sector 44, Gurugram, Haryana, 122002"
+  },
+  {
+    "id": 104,
+    "name": "Pinnacle Consulting Group",
+    "gst_no": "24HIJKL3456H4X1",
+    "contact": {
+      "phone": "+91-62345-67890",
+      "email": "sales@pinnaclegrp.co.in"
+    },
+    "address": "101, Business Towers, Chennai, Tamil Nadu, 600017"
+  },
+  {
+    "id": 105,
+    "name": "The Brand Architects",
+    "gst_no": "09MNOPQ0123J5V7",
+    "contact": {
+      "phone": "+91-99887-76655",
+      "email": "hello@brandarchitects.com"
+    },
+    "address": "G-5, Central Plaza, Kolkata, West Bengal, 700071"
+  }
+],
+
+
+
+
+"item-types":[
+  {
+    "id": "1",
+    "type": "Tablet",
+    "description": "Solid dosage form containing one or more active drugs, typically ingested orally."
+  },
+  {
+    "id": "2",
+    "type": "Capsule",
+    "description": "Dosage form where the drug is enclosed within a soluble shell, usually made of gelatin."
+  },
+  {
+    "id": "3",
+    "type": "Syrup",
+    "description": "Liquid preparation containing a high concentration of sugar, often used for oral administration of liquid medications."
+  },
+  {
+    "id": "4",
+    "type": "Injection",
+    "description": "Sterile liquid preparation administered via needle directly into the body (e.g., intravenous, intramuscular)."
+  },
+  {
+    "id": "5",
+    "type": "Ointment",
+    "description": "Semisolid preparation, greasy in texture, intended for external application to the skin or mucous membranes."
+  },
+  {
+    "id": "6",
+    "type": "Cream",
+    "description": "Semisolid emulsion of oil and water, less greasy than an ointment, used for topical application."
+  },
+  {
+    "id": "7",
+    "type": "Suppository",
+    "description": "Solid dosage form inserted into a body cavity (e.g., rectum, vagina) where it dissolves or melts."
+  },
+  {
+    "id": "8",
+    "type": "Suspension",
+    "description": "Liquid preparation containing fine solid particles dispersed throughout a liquid medium; requires shaking before use."
+  },
+  {
+    "id": "9",
+    "type": "Inhaler",
+    "description": "Device that delivers medication (often in powder or aerosol form) directly to the lungs via the respiratory tract."
+  },
+  {
+    "id": "10",
+    "type": "Drops (Ophthalmic/Otic)",
+    "description": "Sterile liquid solutions intended for administration into the eye (ophthalmic) or ear (otic)."
+  }
+],
+
+
+
+"storage":[
+  {
+    "id": "1",
+    "storage": "Rack",
+    "description": "Ambient (room temperature) general shelving."
+  },
+  {
+    "id": "2",
+    "storage": "Safe",
+    "description": "Secure, locked storage for controlled or high-value items."
+  },
+  {
+    "id": "3",
+    "storage": "Quarantine",
+    "description": "Area for damaged, expired, or recalled items."
+  },
+  {
+    "id": "01",
+    "storage": "01",
+    "description": "Regular storage Box 1 (Ambient)."
+  },
+  {
+    "id": "02",
+    "storage": "02",
+    "description": "Regular storage Box 2 (Ambient)."
+  },
+  {
+    "id": "03",
+    "storage": "03",
+    "description": "Regular storage Box 3 (Ambient)."
+  },
+  {
+    "id": "F1",
+    "storage": "F1",
+    "description": "Fridge compartment/shelf 1 (2°C to 8°C)."
+  },
+  {
+    "id": "F2",
+    "storage": "F2",
+    "description": "Fridge compartment/shelf 2 (2°C to 8°C)."
+  },
+  {
+    "id": "F3",
+    "storage": "F3",
+    "description": "Fridge compartment/shelf 3 (2°C to 8°C)."
+  },
+  {
+    "id": "D1",
+    "storage": "D1",
+    "description": "Drawer 1 (Enclosed storage)."
+  },
+  {
+    "id": "D2",
+    "storage": "D2",
+    "description": "Drawer 2 (Enclosed storage)."
+  },
+  {
+    "id": "D3",
+    "storage": "D3",
+    "description": "Drawer 3 (Enclosed storage)."
+  }
+],
+
+
+
+
+"companies":[
+    { "name": "Cipla", "code": "CL" },
+    { "name": "Dr.Reddy", "code": "DR" },
+    { "name": "Lupin", "code": "LP" },
+    { "name": "GSK", "code": "GS" }
+  ]
+}

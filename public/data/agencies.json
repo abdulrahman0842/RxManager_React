@@ -1,0 +1,52 @@
+[
+  {
+    "id": 101,
+    "name": "Global Marketing Solutions",
+    "gst_no": "27AABCD1234E1Z3",
+    "contact": {
+      "phone": "+91-98765-43210",
+      "email": "contact@globalsolutions.com"
+    },
+    "address": "12, Silicon Avenue, Bengaluru, Karnataka, 560001"
+  },
+  {
+    "id": 102,
+    "name": "Creative Edge Media",
+    "gst_no": "07BXZYZ9876F2W5",
+    "contact": {
+      "phone": "+91-80123-45678",
+      "email": "info@creativeedge.in"
+    },
+    "address": "45/A, Linking Road, Mumbai, Maharashtra, 400052"
+  },
+  {
+    "id": 103,
+    "name": "Digital Bridge Agency",
+    "gst_no": "33CDEFG5678G3Y9",
+    "contact": {
+      "phone": "+91-77000-11223",
+      "email": "support@digitalbridge.net"
+    },
+    "address": "Plot No 8, Sector 44, Gurugram, Haryana, 122002"
+  },
+  {
+    "id": 104,
+    "name": "Pinnacle Consulting Group",
+    "gst_no": "24HIJKL3456H4X1",
+    "contact": {
+      "phone": "+91-62345-67890",
+      "email": "sales@pinnaclegrp.co.in"
+    },
+    "address": "101, Business Towers, Chennai, Tamil Nadu, 600017"
+  },
+  {
+    "id": 105,
+    "name": "The Brand Architects",
+    "gst_no": "09MNOPQ0123J5V7",
+    "contact": {
+      "phone": "+91-99887-76655",
+      "email": "hello@brandarchitects.com"
+    },
+    "address": "G-5, Central Plaza, Kolkata, West Bengal, 700071"
+  }
+]
