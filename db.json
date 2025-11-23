@@ -236,55 +236,55 @@
 ],
 
 
-  "content":[
+  "contents":[
   {
     "id": "M001",
-    "medicine": "Paracetamol",
+    "content": "Paracetamol",
     "description": "Common analgesic and antipyretic (pain reliever and fever reducer)."
   },
   {
     "id": "M002",
-    "medicine": "Atorvastatin",
+    "content": "Atorvastatin",
     "description": "Used to lower cholesterol (statin class)."
   },
   {
     "id": "M003",
-    "medicine": "Tramadol",
+    "content": "Tramadol",
     "description": "Opioid pain medication used to treat moderate to severe pain."
   },
   {
     "id": "M004",
-    "medicine": "Amoxicillin",
+    "content": "Amoxicillin",
     "description": "A penicillin-type antibiotic used to treat bacterial infections."
   },
   {
     "id": "M005",
-    "medicine": "Ibuprofen",
+    "content": "Ibuprofen",
     "description": "Non-steroidal anti-inflammatory drug (NSAID) used for pain, fever, and inflammation."
   },
   {
     "id": "M006",
-    "medicine": "Lisinopril",
+    "content": "Lisinopril",
     "description": "An ACE inhibitor used primarily to treat high blood pressure."
   },
   {
     "id": "M007",
-    "medicine": "Metformin",
+    "content": "Metformin",
     "description": "Used to lower blood sugar levels in people with type 2 diabetes."
   },
   {
     "id": "M008",
-    "medicine": "Omeprazole",
+    "content": "Omeprazole",
     "description": "Proton pump inhibitor used to reduce stomach acid (e.g., for heartburn and ulcers)."
   },
   {
     "id": "M009",
-    "medicine": "Amlodipine",
+    "content": "Amlodipine",
     "description": "A calcium channel blocker used to treat high blood pressure and chest pain (angina)."
   },
   {
     "id": "M010",
-    "medicine": "Cough Syrup (General)",
+    "content": "Cough Syrup (General)",
     "description": "A common compound liquid used to relieve cough symptoms."
   }
 ]
