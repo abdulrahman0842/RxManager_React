@@ -1,0 +1,1 @@
+export const managerHomeHeaderStyle = "d-flex justify-content-between align-items-center my-2 p-3";

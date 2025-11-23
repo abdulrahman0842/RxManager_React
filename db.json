@@ -1,5 +1,6 @@
 {
-    "agencies":[
+
+  "agencies":[
   {
     "id": 101,
     "name": "Global Marketing Solutions",
@@ -53,9 +54,7 @@
 ],
 
 
-
-
-"item-types":[
+  "item-types":[
   {
     "id": "1",
     "type": "Tablet",
@@ -109,8 +108,7 @@
 ],
 
 
-
-"storage":[
+  "storage":[
   {
     "id": "1",
     "storage": "Rack",
@@ -174,12 +172,121 @@
 ],
 
 
+  "companies":[
+  {
+    "id": "C001",
+    "name": "Cipla Ltd.",
+    "contact": {
+      "phone": "+91-22-2652-8000",
+      "email": "info@cipla.com"
+    },
+    "suppliers": [
+      "Active Pharmaceutical Ingredients Inc. (API)",
+      "Packaging Solutions Global"
+    ]
+  },
+  {
+    "id": "C002",
+    "name": "Dr. Reddy's Laboratories",
+    "contact": {
+      "phone": "+91-40-4900-2900",
+      "email": "contact@drreddys.com"
+    },
+    "suppliers": [
+      "Chemical Raw Materials Corp.",
+      "Biotech Fermentation Services"
+    ]
+  },
+  {
+    "id": "C003",
+    "name": "Lupin Pharmaceuticals",
+    "contact": {
+      "phone": "+91-22-6640-2550",
+      "email": "investors@lupin.com"
+    },
+    "suppliers": [
+      "Research Synthetics Ltd.",
+      "Logistics & Distribution Partners"
+    ]
+  },
+  {
+    "id": "C004",
+    "name": "GlaxoSmithKline (GSK)",
+    "contact": {
+      "phone": "+44-20-8047-5000",
+      "email": "customer.service@gsk.com"
+    },
+    "suppliers": [
+      "Clinical Trial Supplies Co."
+    ]
+  },
+  {
+    "id": "C005",
+    "name": "Sun Pharmaceutical Industries Ltd.",
+    "contact": {
+      "phone": "+91-22-4324-4324",
+      "email": "corporate@sunpharma.com"
+    },
+    "suppliers": [
+      "API Bulk Provider",
+      "Machinery Maintenance Inc.",
+      "Quality Testing Labs"
+    ]
+  }
+],
 
 
-"companies":[
-    { "name": "Cipla", "code": "CL" },
-    { "name": "Dr.Reddy", "code": "DR" },
-    { "name": "Lupin", "code": "LP" },
-    { "name": "GSK", "code": "GS" }
-  ]
+  "content":[
+  {
+    "id": "M001",
+    "medicine": "Paracetamol",
+    "description": "Common analgesic and antipyretic (pain reliever and fever reducer)."
+  },
+  {
+    "id": "M002",
+    "medicine": "Atorvastatin",
+    "description": "Used to lower cholesterol (statin class)."
+  },
+  {
+    "id": "M003",
+    "medicine": "Tramadol",
+    "description": "Opioid pain medication used to treat moderate to severe pain."
+  },
+  {
+    "id": "M004",
+    "medicine": "Amoxicillin",
+    "description": "A penicillin-type antibiotic used to treat bacterial infections."
+  },
+  {
+    "id": "M005",
+    "medicine": "Ibuprofen",
+    "description": "Non-steroidal anti-inflammatory drug (NSAID) used for pain, fever, and inflammation."
+  },
+  {
+    "id": "M006",
+    "medicine": "Lisinopril",
+    "description": "An ACE inhibitor used primarily to treat high blood pressure."
+  },
+  {
+    "id": "M007",
+    "medicine": "Metformin",
+    "description": "Used to lower blood sugar levels in people with type 2 diabetes."
+  },
+  {
+    "id": "M008",
+    "medicine": "Omeprazole",
+    "description": "Proton pump inhibitor used to reduce stomach acid (e.g., for heartburn and ulcers)."
+  },
+  {
+    "id": "M009",
+    "medicine": "Amlodipine",
+    "description": "A calcium channel blocker used to treat high blood pressure and chest pain (angina)."
+  },
+  {
+    "id": "M010",
+    "medicine": "Cough Syrup (General)",
+    "description": "A common compound liquid used to relieve cough symptoms."
+  }
+]
+
 }
