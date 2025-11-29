@@ -81,9 +81,10 @@ export const AddCompany = () => {
                 <div >{values.suppliers.map((_, index) => (
                   <div key={index} className='mt-2'>
                     <label className='form-label'>Supplier {index + 1}</label>
-                    <div className='d-flex gap-3'>  <Field name={`suppliers[${[index]}]`}
-                      placeholder={`Enter Supplier ${index + 1}`}
-                      className="form-control w-50" />
+                    <div className='d-flex gap-3'>
+                      <Field name={`suppliers[${[index]}]`}
+                        placeholder={`Enter Supplier ${index + 1}`}
+                        className="form-control w-50" />
                       <button className='btn btn-outline-danger' onClick={() => { remove(index) }}>Remove</button>
                     </div>
                   </div>))}

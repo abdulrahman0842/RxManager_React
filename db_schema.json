@@ -1,0 +1,128 @@
+{
+    "agencies": [
+        {
+            "_id": "1",
+            "name": "Global Marketing Solutions",
+            "gst_no": "27AABCD1234E1Z3",
+            "contact": {
+                "phone": "+91-98765-43210",
+                "email": "contact@globalsolutions.com"
+            },
+            "address": "12, Silicon Avenue, Bengaluru, Karnataka, 560001"
+        }
+    ],
+    "item_types": [
+        {
+            "_id": "1",
+            "type": "Tablet",
+            "description": "Solid dosage form containing one or more active drugs, typically ingested orally."
+        }
+    ],
+    "storages": [
+        {
+            "_id": "1",
+            "storage": "Rack",
+            "description": "Ambient (room temperature) general shelving."
+        }
+    ],
+    "companies": [
+        {
+            "_id": "C001",
+            "name": "Cipla Ltd.",
+            "contact": {
+                "phone": "+91-22-2652-8000",
+                "email": "info@cipla.com"
+            },
+            "agencies": [
+                "agency_id",
+                "agency_id"
+            ]
+        }
+    ],
+    "contents": [
+        {
+            "_id": "M001",
+            "content": "Paracetamol",
+            "description": "Common analgesic and antipyretic (pain reliever and fever reducer)."
+        }
+    ],
+    "medicines": {
+        "_id": 1,
+        "name": "Ibuprofen 400mg",
+        "content": {
+            "id": "M005",
+            "name": "Ibuprofen"
+        },
+        "company": {
+            "id": "C002",
+            "name": "Lupin Pharmaceuticals"
+        },
+        "storage": {
+            "id": "1",
+            "name": "Rack"
+        },
+        "item_type": {
+            "id": "1",
+            "name": "Tablet"
+        },
+        "convert_unit": 20,
+        "agencies": [
+            {
+                "id": 101,
+                "name": "MediSupply Group"
+            },
+            {
+                "id": 105,
+                "name": "Northern Wholesalers"
+            }
+        ]
+    },
+    "item_wise_batches": [
+        {
+            "medicine_id": "as45",
+            "total_stock": 500,
+            "total_batch": 6,
+            "batches": [
+                {
+                    "batch_no": "",
+                    "stock": 0,
+                    "expiry_date": "",
+                    "purchase_rate": 0,
+                    "tax": 0,
+                    "mrp": 0,
+                    "sale_price": 0,
+                    "convert_unit": 0,
+                    "rate_per_unit": 0,
+                    "agencies": [
+                        ""
+                    ]
+                }
+            ]
+        }
+    ],
+    "purchase_invoices": [
+        {
+            "_id": "",
+            "invoice_no": "",
+            "invoice_date": "",
+            "total_amount": 0,
+            "discount_percent": 0,
+            "discount_amount": 0,
+            "amount_payable": 0,
+            "items": [
+                {
+                    "medicine_id": "",
+                    "name": "",
+                    "batch_no": "",
+                    "quantity": 0,
+                    "free": 0,
+                    "purchase_rate": 0,
+                    "mep": "",
+                    "gst": 0,
+                    "convert_unit": 0,
+                    "rate_per_unit": 0
+                }
+            ]
+        }
+    ]
+}

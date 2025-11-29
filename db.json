@@ -287,6 +287,109 @@
     "content": "Cough Syrup (General)",
     "description": "A common compound liquid used to relieve cough symptoms."
   }
-]
+],
 
+
+  "medicines":[
+  {
+    "id": 1,
+    "name": "Ibuprofen 400mg",
+    "content": "Ibuprofen",
+    "company": "Lupin Pharmaceuticals",
+    "convert_unit": 20,
+    "storage": "Rack",
+    "item_type": "Tablet",
+    "supplier": ["MediSupply Group", "Northern Wholesalers"]
+  },
+  {
+    "id": 2,
+    "name": "Amoxicillin 250mg Capsule",
+    "content": "Amoxicillin",
+    "company": "Global Health Labs",
+    "convert_unit": 1,
+    "storage": "Rack",
+    "item_type": "Capsule",
+    "supplier": ["Antibiotic World"]
+  },
+  {
+    "id": 3,
+    "name": "Metformin XR 500mg",
+    "content": "Metformin",
+    "company": "Diabetic Care Inc.",
+    "convert_unit": 30,
+    "storage": "01",
+    "item_type": "Extended Release Tablet",
+    "supplier": ["PharmaLink Distributors"]
+  },
+  {
+    "id": 4,
+    "name": "Lisinopril 10mg",
+    "content": "Lisinopril",
+    "company": "HeartGuard Solutions",
+    "convert_unit": 15,
+    "storage": "02",
+    "item_type": "Tablet",
+    "supplier": ["Cardinal Healthcare"]
+  },
+  {
+    "id": 5,
+    "name": "Cetirizine Syrup 5mg/5ml",
+    "content": "Cetirizine",
+    "company": "Allergy Fighters",
+    "convert_unit": 1,
+    "storage": "Rack",
+    "item_type": "Syrup",
+    "supplier": ["Pediatric Pharma"]
+  },
+  {
+    "id": 6,
+    "name": "Ventolin Inhaler",
+    "content": "Albuterol Sulfate",
+    "company": "BreathEasy Corp",
+    "convert_unit": 1,
+    "storage": "Safe",
+    "item_type": "Inhaler",
+    "supplier": ["Respiratory Medical"]
+  },
+  {
+    "id": 7,
+    "name": "Ondansetron 4mg (Expired/Damaged)",
+    "content": "Ondansetron",
+    "company": "Nausea Blockers Ltd.",
+    "convert_unit": 10,
+    "storage": "Quarantine",
+    "item_type": "Tablet",
+    "supplier": ["Gastro Supply"]
+  },
+  {
+    "id": 8,
+    "name": "Diclofenac Gel 1%",
+    "content": "Diclofenac",
+    "company": "Joint Relief Co.",
+    "convert_unit": 1,
+    "storage": "01",
+    "item_type": "Topical Gel",
+    "supplier": ["Skin & Joint Care"]
+  },
+  {
+    "id": 9,
+    "name": "Folic Acid 1mg",
+    "content": "Folic Acid",
+    "company": "Vitamin Essentials",
+    "convert_unit": 60,
+    "storage": "02",
+    "item_type": "Tablet",
+    "supplier": ["NutriCorp"]
+  },
+  {
+    "id": 10,
+    "name": "Hydrocortisone Cream 0.5%",
+    "content": "Hydrocortisone",
+    "company": "Dermato Pharma",
+    "convert_unit": 1,
+    "storage": "Rack",
+    "item_type": "Cream",
+    "supplier": ["MediSupply Group", "Dermatology Partners"]
+  }
+]
 }
