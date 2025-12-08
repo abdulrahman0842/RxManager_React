@@ -1,20 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import { modules } from '../utils/modules'
 export const NavBar = () => {
-    const modules = [
-        { name: "Medicine Manager", path: "/medicine-manager" },
-        // { name: "Batch Manager", path: "/batch-manager" },
-        { name: "Content Manager", path: "/content-manager" },
-        { name: "Company Manager", path: "/company-manager" },
-        { name: "Storage Manager", path: "/storage-manager" },
-        { name: "Item-Type Manager", path: "/item-type-manager" },
-        { name: "Agency Manager", path: "/agency-manager" },
-    ];
+    
 
     return (
 
-        <nav className='navbar  navbar-expand-lg navbar-dark bg-dark  '>
+        <nav className='navbar  navbar-expand-lg navbar-dark bg-dark '>
 
             <div className='container-fluid'>
                 <Link to={'/'} className='navbar-brand'>RxManager</Link>
@@ -26,7 +18,7 @@ export const NavBar = () => {
                         </li>)
                     }
                 </ul>
-                
+
             </div>
         </nav>
     )

@@ -45,14 +45,13 @@ export const ModifyAgency = () => {
     return (
         <>
             <div className="fw-bold m-2 ">Modify Agency</div>
-
-            <table className='table table-hover'>
+            <table className='table table-hover rounded shadow p-2'>
                 <thead>
                     <tr>
                         <th>Name</th>
                         <th>GST No.</th>
-
-
+                        <th>Phone No.</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -60,6 +59,7 @@ export const ModifyAgency = () => {
                         <tr key={agency.id}>
                             <td>{agency.name}</td>
                             <td>{agency.gst_no}</td>
+                            <td>{agency.contact.phone}</td>
                             <td className='d-flex gap-2 '>
                                 <div className='bi bi-pen btn btn-warning' data-bs-toggle="modal"
                                     data-bs-target="#edit-modal" onClick={() => { setselectedAgency(agency) }}> </div>

@@ -38,7 +38,7 @@ export const AddCompany = () => {
         onSubmit={HandleSubmit}
       >
         {({ values, isSubmitting }) => (
-          <Form className='border p-4 rounded shadow-sm bg-light'>
+          <Form className='border p-4 rounded shadow bg-white'>
             <div className='d-flex gap-3' >
               <div className=' w-50'>
                 <label className='form-label'>Company</label>

@@ -42,7 +42,7 @@ const AddAgency = () => {
         onSubmit={handleSubmit}
       >
         {({ isSubmitting }) => (
-          <Form className="border p-4 rounded shadow-sm bg-light">
+          <Form className="border p-4 rounded shadow bg-white">
             <div className="d-flex justify-content-between gap-3 mb-3">
               <div className="flex-fill">
                 <label className="form-label">Agency Name</label>

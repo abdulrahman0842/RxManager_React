@@ -7,6 +7,7 @@ import { StorageHome } from "./storage-manager/StorageHome";
 import { CompanyHome } from "./company-manager/CompanyHome";
 import { ContentHome } from "./content-manager/ContentHome";
 import { MedicineHome } from "./medicine-manager/MedicineHome";
+import { PurchaseHome } from "./purchase-manager/PurchaseHome";
 
 export function RxManagerIndex() {
 
@@ -15,7 +16,7 @@ export function RxManagerIndex() {
     <div>
       <NavBar />
 
-      <section >
+      <section className="bg-light w-100 p-0 m-0 " style={{height:'90vh'}}>
         <Routes>
           <Route path="/" element={<RxManagerHome />} />
           <Route path="/agency-manager/*" element={<AgencyHome />} />
@@ -24,6 +25,7 @@ export function RxManagerIndex() {
           <Route path="/company-manager/*" element={<CompanyHome />} />
           <Route path="/content-manager/*" element={<ContentHome />} />
           <Route path="/medicine-manager/*" element={<MedicineHome />} />
+          <Route path="/purchase-manager/*" element={<PurchaseHome />} />
 
 
 

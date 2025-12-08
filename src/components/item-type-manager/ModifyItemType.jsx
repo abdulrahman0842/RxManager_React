@@ -33,7 +33,7 @@ export const ModifyItemType = () => {
   return (
     <div className='container-fluid'>
       <div className='fw-bold'>Modify Item Type</div>
-      <table className='table table-hover mt-2'>
+      <table className='table table-hover mt-2 shadow rounded'>
         <thead>
           <tr>
             <th>Type</th>
@@ -46,9 +46,8 @@ export const ModifyItemType = () => {
             itemTypes.map((type) => (<tr key={type.id}>
               <td>{type.type}</td>
               <td>{type.description}</td>
-              <td className='d-flex gap-2 row'>
+              <td className='d-flex gap-2'>
                 <div className='btn btn-warning bi bi-pen' onClick={() => { setselectedType(type) }} data-bs-target="#edit-modal" data-bs-toggle="modal"></div>
-
                 <div className='btn btn-danger bi bi-trash' data-bs-target="#delete-modal" data-bs-toggle="modal"></div>
               </td>
             </tr>))

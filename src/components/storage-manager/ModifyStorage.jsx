@@ -32,8 +32,8 @@ export const ModifyStorage = () => {
   }, [])
   return (
     <div className='container-fluid'>
-      <div className='fw-bold'>Modify Storage</div>
-      <table className='table table-hover mt-2'>
+      <div className='fw-bold m-2'>Modify Storage</div>
+      <table className='table table-hover mt-2 shadow'>
         <thead>
           <tr>
             <th>Storage</th>
@@ -46,9 +46,9 @@ export const ModifyStorage = () => {
             storage.map((item) => (<tr key={item.id}>
               <td>{item.storage}</td>
               <td>{item.description}</td>
-              <td className='d-flex gap-2 row'>
-                <div className='btn btn-warning bi bi-pen' onClick={() => { setselectedStorage(item) }} data-bs-target="#edit-modal" data-bs-toggle="modal"></div>
-                <div className='btn btn-danger bi bi-trash' data-bs-target="#delete-modal" data-bs-toggle="modal"></div>
+              <td className='d-flex gap-2 '>
+                <div className='btn btn-warning bi bi-pen flex-fill' onClick={() => { setselectedStorage(item) }} data-bs-target="#edit-modal" data-bs-toggle="modal"></div>
+                <div className='btn btn-danger bi bi-trash flex-fill' data-bs-target="#delete-modal" data-bs-toggle="modal"></div>
               </td>
             </tr>))
           }

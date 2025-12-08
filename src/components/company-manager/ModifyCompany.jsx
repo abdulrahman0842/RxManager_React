@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { Formik, Form, Field ,FieldArray} from 'formik';
+import { Formik, Form, Field, FieldArray } from 'formik';
 import { getCompaniesEndpoint } from '../../utils/endpoints';
 
 export const ModifyCompany = () => {
@@ -33,8 +33,8 @@ export const ModifyCompany = () => {
   }, [])
   return (
     <div className='container-fluid'>
-      <div className='fw-bold'>Modify Company</div>
-      <table className='table table-hover mt-2'>
+      <div className='fw-bold m-2'>Modify Company</div>
+      <table className='table table-hover mt-2 shadow'>
         <thead>
           <tr>
             <th>Name</th>

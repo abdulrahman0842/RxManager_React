@@ -38,7 +38,7 @@ export const AddItemType = () => {
         onSubmit={HandleSubmit}
       >
         {({ isSubmitting }) => (
-          <Form className='border p-4 rounded shadow-sm bg-light'>
+          <Form className='border p-4 rounded shadow bg-white'>
             <div className='d-flex gap-3' >
               <div className=' flex-fill'>
                 <label className='form-label'>ItemType</label>

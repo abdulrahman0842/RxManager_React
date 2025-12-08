@@ -32,8 +32,8 @@ export const ModifyContent = () => {
   }, [])
   return (
     <div className='container-fluid'>
-      <div className='fw-bold'>Modify Content</div>
-      <table className='table table-hover mt-2'>
+      <div className='fw-bold m-2'>Modify Content</div>
+      <table className='table table-hover mt-2  shadow'>
         <thead>
           <tr>
             <th>Content</th>
@@ -46,10 +46,10 @@ export const ModifyContent = () => {
             contents.map((item) => (<tr key={item.id}>
               <td>{item.content}</td>
               <td>{item.description}</td>
-              <td className='d-flex gap-2 row'>
-                <div className='btn btn-warning bi bi-pen' onClick={() => { setselectedContent(item) }} data-bs-target="#edit-modal" data-bs-toggle="modal"></div>
+              <td className='d-flex gap-2 '>
+                <div className='btn btn-warning bi bi-pen flex-fill' onClick={() => { setselectedContent(item) }} data-bs-target="#edit-modal" data-bs-toggle="modal"></div>
 
-                <div className='btn btn-danger bi bi-trash' data-bs-target="#delete-modal" data-bs-toggle="modal"></div>
+                <div className='btn btn-danger bi bi-trash flex-fill' data-bs-target="#delete-modal" data-bs-toggle="modal"></div>
               </td>
             </tr>))
           }

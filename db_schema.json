@@ -109,15 +109,22 @@
             "discount_percent": 0,
             "discount_amount": 0,
             "amount_payable": 0,
+            "supplier":{
+                "id":"",
+                "name":""
+            },
             "items": [
                 {
                     "medicine_id": "",
                     "name": "",
                     "batch_no": "",
+                    "expiry_date":"",
                     "quantity": 0,
                     "free": 0,
                     "purchase_rate": 0,
-                    "mep": "",
+                    "mrp": "",
+                    "selling_rate":"",
+                    "profit_percentage":"",
                     "gst": 0,
                     "convert_unit": 0,
                     "rate_per_unit": 0
