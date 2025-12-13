@@ -9,3 +9,7 @@ export const getCompaniesEndpoint = "http://localhost:5000/companies";
 export const getContentsEndpoint = "http://localhost:5000/contents";
 
 export const getMedicinesEndpoint = "http://localhost:5000/medicines";
+
+export const getPurchaseInvoiceEndpoint = "http://localhost:5000/purchase-invoices";
+
+

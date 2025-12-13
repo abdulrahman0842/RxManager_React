@@ -7,6 +7,7 @@ import { getAgenciesEndpoint, getCompaniesEndpoint, getContentsEndpoint, getItem
 export const ModifyMedicine = () => {
   const [medicines, setMedicines] = useState([])
   const [selectedMedicine, setSelectedMedicine] = useState({});
+  
   function LoadMedicines() {
     axios.get(getMedicinesEndpoint).then(
       response => {

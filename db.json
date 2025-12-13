@@ -1,395 +1,784 @@
 {
-
-  "agencies":[
-  {
-    "id": 101,
-    "name": "Global Marketing Solutions",
-    "gst_no": "27AABCD1234E1Z3",
-    "contact": {
-      "phone": "+91-98765-43210",
-      "email": "contact@globalsolutions.com"
+  "agencies": [
+    {
+      "id": 101,
+      "name": "Global Marketing Solutions",
+      "gst_no": "27AABCD1234E1Z3",
+      "contact": {
+        "phone": "+91-98765-43210",
+        "email": "contact@globalsolutions.com"
+      },
+      "address": "12, Silicon Avenue, Bengaluru, Karnataka, 560001"
     },
-    "address": "12, Silicon Avenue, Bengaluru, Karnataka, 560001"
-  },
-  {
-    "id": 102,
-    "name": "Creative Edge Media",
-    "gst_no": "07BXZYZ9876F2W5",
-    "contact": {
-      "phone": "+91-80123-45678",
-      "email": "info@creativeedge.in"
+    {
+      "id": 102,
+      "name": "Creative Edge Media",
+      "gst_no": "07BXZYZ9876F2W5",
+      "contact": {
+        "phone": "+91-80123-45678",
+        "email": "info@creativeedge.in"
+      },
+      "address": "45/A, Linking Road, Mumbai, Maharashtra, 400052"
     },
-    "address": "45/A, Linking Road, Mumbai, Maharashtra, 400052"
-  },
-  {
-    "id": 103,
-    "name": "Digital Bridge Agency",
-    "gst_no": "33CDEFG5678G3Y9",
-    "contact": {
-      "phone": "+91-77000-11223",
-      "email": "support@digitalbridge.net"
+    {
+      "id": 103,
+      "name": "Digital Bridge Agency",
+      "gst_no": "33CDEFG5678G3Y9",
+      "contact": {
+        "phone": "+91-77000-11223",
+        "email": "support@digitalbridge.net"
+      },
+      "address": "Plot No 8, Sector 44, Gurugram, Haryana, 122002"
     },
-    "address": "Plot No 8, Sector 44, Gurugram, Haryana, 122002"
-  },
-  {
-    "id": 104,
-    "name": "Pinnacle Consulting Group",
-    "gst_no": "24HIJKL3456H4X1",
-    "contact": {
-      "phone": "+91-62345-67890",
-      "email": "sales@pinnaclegrp.co.in"
+    {
+      "id": 104,
+      "name": "Pinnacle Consulting Group",
+      "gst_no": "24HIJKL3456H4X1",
+      "contact": {
+        "phone": "+91-62345-67890",
+        "email": "sales@pinnaclegrp.co.in"
+      },
+      "address": "101, Business Towers, Chennai, Tamil Nadu, 600017"
     },
-    "address": "101, Business Towers, Chennai, Tamil Nadu, 600017"
-  },
-  {
-    "id": 105,
-    "name": "The Brand Architects",
-    "gst_no": "09MNOPQ0123J5V7",
-    "contact": {
-      "phone": "+91-99887-76655",
-      "email": "hello@brandarchitects.com"
+    {
+      "id": 105,
+      "name": "The Brand Architects",
+      "gst_no": "09MNOPQ0123J5V7",
+      "contact": {
+        "phone": "+91-99887-76655",
+        "email": "hello@brandarchitects.com"
+      },
+      "address": "G-5, Central Plaza, Kolkata, West Bengal, 700071"
+    }
+  ],
+  "item-types": [
+    {
+      "id": "1",
+      "type": "Tablet",
+      "description": "Solid dosage form containing one or more active drugs, typically ingested orally."
     },
-    "address": "G-5, Central Plaza, Kolkata, West Bengal, 700071"
-  }
-],
-
-
-  "item-types":[
-  {
-    "id": "1",
-    "type": "Tablet",
-    "description": "Solid dosage form containing one or more active drugs, typically ingested orally."
-  },
-  {
-    "id": "2",
-    "type": "Capsule",
-    "description": "Dosage form where the drug is enclosed within a soluble shell, usually made of gelatin."
-  },
-  {
-    "id": "3",
-    "type": "Syrup",
-    "description": "Liquid preparation containing a high concentration of sugar, often used for oral administration of liquid medications."
-  },
-  {
-    "id": "4",
-    "type": "Injection",
-    "description": "Sterile liquid preparation administered via needle directly into the body (e.g., intravenous, intramuscular)."
-  },
-  {
-    "id": "5",
-    "type": "Ointment",
-    "description": "Semisolid preparation, greasy in texture, intended for external application to the skin or mucous membranes."
-  },
-  {
-    "id": "6",
-    "type": "Cream",
-    "description": "Semisolid emulsion of oil and water, less greasy than an ointment, used for topical application."
-  },
-  {
-    "id": "7",
-    "type": "Suppository",
-    "description": "Solid dosage form inserted into a body cavity (e.g., rectum, vagina) where it dissolves or melts."
-  },
-  {
-    "id": "8",
-    "type": "Suspension",
-    "description": "Liquid preparation containing fine solid particles dispersed throughout a liquid medium; requires shaking before use."
-  },
-  {
-    "id": "9",
-    "type": "Inhaler",
-    "description": "Device that delivers medication (often in powder or aerosol form) directly to the lungs via the respiratory tract."
-  },
-  {
-    "id": "10",
-    "type": "Drops (Ophthalmic/Otic)",
-    "description": "Sterile liquid solutions intended for administration into the eye (ophthalmic) or ear (otic)."
-  }
-],
-
-
-  "storage":[
-  {
-    "id": "1",
-    "storage": "Rack",
-    "description": "Ambient (room temperature) general shelving."
-  },
-  {
-    "id": "2",
-    "storage": "Safe",
-    "description": "Secure, locked storage for controlled or high-value items."
-  },
-  {
-    "id": "3",
-    "storage": "Quarantine",
-    "description": "Area for damaged, expired, or recalled items."
-  },
-  {
-    "id": "01",
-    "storage": "01",
-    "description": "Regular storage Box 1 (Ambient)."
-  },
-  {
-    "id": "02",
-    "storage": "02",
-    "description": "Regular storage Box 2 (Ambient)."
-  },
-  {
-    "id": "03",
-    "storage": "03",
-    "description": "Regular storage Box 3 (Ambient)."
-  },
-  {
-    "id": "F1",
-    "storage": "F1",
-    "description": "Fridge compartment/shelf 1 (2°C to 8°C)."
-  },
-  {
-    "id": "F2",
-    "storage": "F2",
-    "description": "Fridge compartment/shelf 2 (2°C to 8°C)."
-  },
-  {
-    "id": "F3",
-    "storage": "F3",
-    "description": "Fridge compartment/shelf 3 (2°C to 8°C)."
-  },
-  {
-    "id": "D1",
-    "storage": "D1",
-    "description": "Drawer 1 (Enclosed storage)."
-  },
-  {
-    "id": "D2",
-    "storage": "D2",
-    "description": "Drawer 2 (Enclosed storage)."
-  },
-  {
-    "id": "D3",
-    "storage": "D3",
-    "description": "Drawer 3 (Enclosed storage)."
-  }
-],
-
-
-  "companies":[
-  {
-    "id": "C001",
-    "name": "Cipla Ltd.",
-    "contact": {
-      "phone": "+91-22-2652-8000",
-      "email": "info@cipla.com"
+    {
+      "id": "2",
+      "type": "Capsule",
+      "description": "Dosage form where the drug is enclosed within a soluble shell, usually made of gelatin."
     },
-    "suppliers": [
-      "Active Pharmaceutical Ingredients Inc. (API)",
-      "Packaging Solutions Global"
-    ]
-  },
-  {
-    "id": "C002",
-    "name": "Dr. Reddy's Laboratories",
-    "contact": {
-      "phone": "+91-40-4900-2900",
-      "email": "contact@drreddys.com"
+    {
+      "id": "3",
+      "type": "Syrup",
+      "description": "Liquid preparation containing a high concentration of sugar, often used for oral administration of liquid medications."
     },
-    "suppliers": [
-      "Chemical Raw Materials Corp.",
-      "Biotech Fermentation Services"
-    ]
-  },
-  {
-    "id": "C003",
-    "name": "Lupin Pharmaceuticals",
-    "contact": {
-      "phone": "+91-22-6640-2550",
-      "email": "investors@lupin.com"
+    {
+      "id": "4",
+      "type": "Injection",
+      "description": "Sterile liquid preparation administered via needle directly into the body (e.g., intravenous, intramuscular)."
     },
-    "suppliers": [
-      "Research Synthetics Ltd.",
-      "Logistics & Distribution Partners"
-    ]
-  },
-  {
-    "id": "C004",
-    "name": "GlaxoSmithKline (GSK)",
-    "contact": {
-      "phone": "+44-20-8047-5000",
-      "email": "customer.service@gsk.com"
+    {
+      "id": "5",
+      "type": "Ointment",
+      "description": "Semisolid preparation, greasy in texture, intended for external application to the skin or mucous membranes."
     },
-    "suppliers": [
-      "Clinical Trial Supplies Co."
-    ]
-  },
-  {
-    "id": "C005",
-    "name": "Sun Pharmaceutical Industries Ltd.",
-    "contact": {
-      "phone": "+91-22-4324-4324",
-      "email": "corporate@sunpharma.com"
+    {
+      "id": "6",
+      "type": "Cream",
+      "description": "Semisolid emulsion of oil and water, less greasy than an ointment, used for topical application."
     },
-    "suppliers": [
-      "API Bulk Provider",
-      "Machinery Maintenance Inc.",
-      "Quality Testing Labs"
-    ]
-  }
-],
-
-
-  "contents":[
-  {
-    "id": "M001",
-    "content": "Paracetamol",
-    "description": "Common analgesic and antipyretic (pain reliever and fever reducer)."
-  },
-  {
-    "id": "M002",
-    "content": "Atorvastatin",
-    "description": "Used to lower cholesterol (statin class)."
-  },
-  {
-    "id": "M003",
-    "content": "Tramadol",
-    "description": "Opioid pain medication used to treat moderate to severe pain."
-  },
-  {
-    "id": "M004",
-    "content": "Amoxicillin",
-    "description": "A penicillin-type antibiotic used to treat bacterial infections."
-  },
-  {
-    "id": "M005",
-    "content": "Ibuprofen",
-    "description": "Non-steroidal anti-inflammatory drug (NSAID) used for pain, fever, and inflammation."
-  },
-  {
-    "id": "M006",
-    "content": "Lisinopril",
-    "description": "An ACE inhibitor used primarily to treat high blood pressure."
-  },
-  {
-    "id": "M007",
-    "content": "Metformin",
-    "description": "Used to lower blood sugar levels in people with type 2 diabetes."
-  },
-  {
-    "id": "M008",
-    "content": "Omeprazole",
-    "description": "Proton pump inhibitor used to reduce stomach acid (e.g., for heartburn and ulcers)."
-  },
-  {
-    "id": "M009",
-    "content": "Amlodipine",
-    "description": "A calcium channel blocker used to treat high blood pressure and chest pain (angina)."
-  },
-  {
-    "id": "M010",
-    "content": "Cough Syrup (General)",
-    "description": "A common compound liquid used to relieve cough symptoms."
-  }
-],
-
-
-  "medicines":[
-  {
-    "id": 1,
-    "name": "Ibuprofen 400mg",
-    "content": "Ibuprofen",
-    "company": "Lupin Pharmaceuticals",
-    "convert_unit": 20,
-    "storage": "Rack",
-    "item_type": "Tablet",
-    "supplier": ["MediSupply Group", "Northern Wholesalers"]
-  },
-  {
-    "id": 2,
-    "name": "Amoxicillin 250mg Capsule",
-    "content": "Amoxicillin",
-    "company": "Global Health Labs",
-    "convert_unit": 1,
-    "storage": "Rack",
-    "item_type": "Capsule",
-    "supplier": ["Antibiotic World"]
-  },
-  {
-    "id": 3,
-    "name": "Metformin XR 500mg",
-    "content": "Metformin",
-    "company": "Diabetic Care Inc.",
-    "convert_unit": 30,
-    "storage": "01",
-    "item_type": "Extended Release Tablet",
-    "supplier": ["PharmaLink Distributors"]
-  },
-  {
-    "id": 4,
-    "name": "Lisinopril 10mg",
-    "content": "Lisinopril",
-    "company": "HeartGuard Solutions",
-    "convert_unit": 15,
-    "storage": "02",
-    "item_type": "Tablet",
-    "supplier": ["Cardinal Healthcare"]
-  },
-  {
-    "id": 5,
-    "name": "Cetirizine Syrup 5mg/5ml",
-    "content": "Cetirizine",
-    "company": "Allergy Fighters",
-    "convert_unit": 1,
-    "storage": "Rack",
-    "item_type": "Syrup",
-    "supplier": ["Pediatric Pharma"]
-  },
-  {
-    "id": 6,
-    "name": "Ventolin Inhaler",
-    "content": "Albuterol Sulfate",
-    "company": "BreathEasy Corp",
-    "convert_unit": 1,
-    "storage": "Safe",
-    "item_type": "Inhaler",
-    "supplier": ["Respiratory Medical"]
-  },
-  {
-    "id": 7,
-    "name": "Ondansetron 4mg (Expired/Damaged)",
-    "content": "Ondansetron",
-    "company": "Nausea Blockers Ltd.",
-    "convert_unit": 10,
-    "storage": "Quarantine",
-    "item_type": "Tablet",
-    "supplier": ["Gastro Supply"]
-  },
-  {
-    "id": 8,
-    "name": "Diclofenac Gel 1%",
-    "content": "Diclofenac",
-    "company": "Joint Relief Co.",
-    "convert_unit": 1,
-    "storage": "01",
-    "item_type": "Topical Gel",
-    "supplier": ["Skin & Joint Care"]
-  },
-  {
-    "id": 9,
-    "name": "Folic Acid 1mg",
-    "content": "Folic Acid",
-    "company": "Vitamin Essentials",
-    "convert_unit": 60,
-    "storage": "02",
-    "item_type": "Tablet",
-    "supplier": ["NutriCorp"]
-  },
-  {
-    "id": 10,
-    "name": "Hydrocortisone Cream 0.5%",
-    "content": "Hydrocortisone",
-    "company": "Dermato Pharma",
-    "convert_unit": 1,
-    "storage": "Rack",
-    "item_type": "Cream",
-    "supplier": ["MediSupply Group", "Dermatology Partners"]
-  }
-]
+    {
+      "id": "7",
+      "type": "Suppository",
+      "description": "Solid dosage form inserted into a body cavity (e.g., rectum, vagina) where it dissolves or melts."
+    },
+    {
+      "id": "8",
+      "type": "Suspension",
+      "description": "Liquid preparation containing fine solid particles dispersed throughout a liquid medium; requires shaking before use."
+    },
+    {
+      "id": "9",
+      "type": "Inhaler",
+      "description": "Device that delivers medication (often in powder or aerosol form) directly to the lungs via the respiratory tract."
+    },
+    {
+      "id": "10",
+      "type": "Drops (Ophthalmic/Otic)",
+      "description": "Sterile liquid solutions intended for administration into the eye (ophthalmic) or ear (otic)."
+    }
+  ],
+  "storage": [
+    {
+      "id": "1",
+      "storage": "Rack",
+      "description": "Ambient (room temperature) general shelving."
+    },
+    {
+      "id": "2",
+      "storage": "Safe",
+      "description": "Secure, locked storage for controlled or high-value items."
+    },
+    {
+      "id": "3",
+      "storage": "Quarantine",
+      "description": "Area for damaged, expired, or recalled items."
+    },
+    {
+      "id": "01",
+      "storage": "01",
+      "description": "Regular storage Box 1 (Ambient)."
+    },
+    {
+      "id": "02",
+      "storage": "02",
+      "description": "Regular storage Box 2 (Ambient)."
+    },
+    {
+      "id": "03",
+      "storage": "03",
+      "description": "Regular storage Box 3 (Ambient)."
+    },
+    {
+      "id": "F1",
+      "storage": "F1",
+      "description": "Fridge compartment/shelf 1 (2°C to 8°C)."
+    },
+    {
+      "id": "F2",
+      "storage": "F2",
+      "description": "Fridge compartment/shelf 2 (2°C to 8°C)."
+    },
+    {
+      "id": "F3",
+      "storage": "F3",
+      "description": "Fridge compartment/shelf 3 (2°C to 8°C)."
+    },
+    {
+      "id": "D1",
+      "storage": "D1",
+      "description": "Drawer 1 (Enclosed storage)."
+    },
+    {
+      "id": "D2",
+      "storage": "D2",
+      "description": "Drawer 2 (Enclosed storage)."
+    },
+    {
+      "id": "D3",
+      "storage": "D3",
+      "description": "Drawer 3 (Enclosed storage)."
+    }
+  ],
+  "companies": [
+    {
+      "id": "C001",
+      "name": "Cipla Ltd.",
+      "contact": {
+        "phone": "+91-22-2652-8000",
+        "email": "info@cipla.com"
+      },
+      "suppliers": [
+        "Active Pharmaceutical Ingredients Inc. (API)",
+        "Packaging Solutions Global"
+      ]
+    },
+    {
+      "id": "C002",
+      "name": "Dr. Reddy's Laboratories",
+      "contact": {
+        "phone": "+91-40-4900-2900",
+        "email": "contact@drreddys.com"
+      },
+      "suppliers": [
+        "Chemical Raw Materials Corp.",
+        "Biotech Fermentation Services"
+      ]
+    },
+    {
+      "id": "C003",
+      "name": "Lupin Pharmaceuticals",
+      "contact": {
+        "phone": "+91-22-6640-2550",
+        "email": "investors@lupin.com"
+      },
+      "suppliers": [
+        "Research Synthetics Ltd.",
+        "Logistics & Distribution Partners"
+      ]
+    },
+    {
+      "id": "C004",
+      "name": "GlaxoSmithKline (GSK)",
+      "contact": {
+        "phone": "+44-20-8047-5000",
+        "email": "customer.service@gsk.com"
+      },
+      "suppliers": [
+        "Clinical Trial Supplies Co."
+      ]
+    },
+    {
+      "id": "C005",
+      "name": "Sun Pharmaceutical Industries Ltd.",
+      "contact": {
+        "phone": "+91-22-4324-4324",
+        "email": "corporate@sunpharma.com"
+      },
+      "suppliers": [
+        "API Bulk Provider",
+        "Machinery Maintenance Inc.",
+        "Quality Testing Labs"
+      ]
+    }
+  ],
+  "contents": [
+    {
+      "id": "M001",
+      "content": "Paracetamol",
+      "description": "Common analgesic and antipyretic (pain reliever and fever reducer)."
+    },
+    {
+      "id": "M002",
+      "content": "Atorvastatin",
+      "description": "Used to lower cholesterol (statin class)."
+    },
+    {
+      "id": "M003",
+      "content": "Tramadol",
+      "description": "Opioid pain medication used to treat moderate to severe pain."
+    },
+    {
+      "id": "M004",
+      "content": "Amoxicillin",
+      "description": "A penicillin-type antibiotic used to treat bacterial infections."
+    },
+    {
+      "id": "M005",
+      "content": "Ibuprofen",
+      "description": "Non-steroidal anti-inflammatory drug (NSAID) used for pain, fever, and inflammation."
+    },
+    {
+      "id": "M006",
+      "content": "Lisinopril",
+      "description": "An ACE inhibitor used primarily to treat high blood pressure."
+    },
+    {
+      "id": "M007",
+      "content": "Metformin",
+      "description": "Used to lower blood sugar levels in people with type 2 diabetes."
+    },
+    {
+      "id": "M008",
+      "content": "Omeprazole",
+      "description": "Proton pump inhibitor used to reduce stomach acid (e.g., for heartburn and ulcers)."
+    },
+    {
+      "id": "M009",
+      "content": "Amlodipine",
+      "description": "A calcium channel blocker used to treat high blood pressure and chest pain (angina)."
+    },
+    {
+      "id": "M010",
+      "content": "Cough Syrup (General)",
+      "description": "A common compound liquid used to relieve cough symptoms."
+    }
+  ],
+  "medicines": [
+    {
+      "id": 1,
+      "name": "Ibuprofen 400mg",
+      "content": "Ibuprofen",
+      "company": "Lupin Pharmaceuticals",
+      "convert_unit": 20,
+      "storage": "Rack",
+      "item_type": "Tablet",
+      "supplier": [
+        "MediSupply Group",
+        "Northern Wholesalers"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Amoxicillin 250mg Capsule",
+      "content": "Amoxicillin",
+      "company": "Global Health Labs",
+      "convert_unit": 1,
+      "storage": "Rack",
+      "item_type": "Capsule",
+      "supplier": [
+        "Antibiotic World"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Metformin XR 500mg",
+      "content": "Metformin",
+      "company": "Diabetic Care Inc.",
+      "convert_unit": 30,
+      "storage": "01",
+      "item_type": "Extended Release Tablet",
+      "supplier": [
+        "PharmaLink Distributors"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Lisinopril 10mg",
+      "content": "Lisinopril",
+      "company": "HeartGuard Solutions",
+      "convert_unit": 15,
+      "storage": "02",
+      "item_type": "Tablet",
+      "supplier": [
+        "Cardinal Healthcare"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Cetirizine Syrup 5mg/5ml",
+      "content": "Cetirizine",
+      "company": "Allergy Fighters",
+      "convert_unit": 1,
+      "storage": "Rack",
+      "item_type": "Syrup",
+      "supplier": [
+        "Pediatric Pharma"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Ventolin Inhaler",
+      "content": "Albuterol Sulfate",
+      "company": "BreathEasy Corp",
+      "convert_unit": 1,
+      "storage": "Safe",
+      "item_type": "Inhaler",
+      "supplier": [
+        "Respiratory Medical"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Ondansetron 4mg (Expired/Damaged)",
+      "content": "Ondansetron",
+      "company": "Nausea Blockers Ltd.",
+      "convert_unit": 10,
+      "storage": "Quarantine",
+      "item_type": "Tablet",
+      "supplier": [
+        "Gastro Supply"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Diclofenac Gel 1%",
+      "content": "Diclofenac",
+      "company": "Joint Relief Co.",
+      "convert_unit": 1,
+      "storage": "01",
+      "item_type": "Topical Gel",
+      "supplier": [
+        "Skin & Joint Care"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Folic Acid 1mg",
+      "content": "Folic Acid",
+      "company": "Vitamin Essentials",
+      "convert_unit": 60,
+      "storage": "02",
+      "item_type": "Tablet",
+      "supplier": [
+        "NutriCorp"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Hydrocortisone Cream 0.5%",
+      "content": "Hydrocortisone",
+      "company": "Dermato Pharma",
+      "convert_unit": 1,
+      "storage": "Rack",
+      "item_type": "Cream",
+      "supplier": [
+        "MediSupply Group",
+        "Dermatology Partners"
+      ]
+    }
+  ],
+  "purchase-invoices": [
+    {
+      "_id": "PI00001",
+      "invoice_no": "ABC/2025/1001",
+      "invoice_date": "2025-11-20",
+      "total_amount": 1550,
+      "discount_percent": 5,
+      "discount_amount": 77.5,
+      "amount_payable": 1472.5,
+      "supplier": {
+        "id": "SUP001",
+        "name": "Apollo Pharma Distributors"
+      },
+      "items": [
+        {
+          "medicine_id": "MED0101",
+          "name": "Amoxicillin 500mg (10's)",
+          "batch_no": "AX500/25C",
+          "expiry_date": "2027-06-30",
+          "quantity": 10,
+          "free": 1,
+          "purchase_rate": 100,
+          "mrp": "120.00",
+          "selling_rate": "115.00",
+          "profit_percentage": "15.00",
+          "gst": 5,
+          "convert_unit": 1,
+          "rate_per_unit": 100
+        },
+        {
+          "medicine_id": "MED0205",
+          "name": "Paracetamol 650mg (10's)",
+          "batch_no": "PC650/25F",
+          "expiry_date": "2026-12-31",
+          "quantity": 5,
+          "free": 0,
+          "purchase_rate": 110,
+          "mrp": "140.00",
+          "selling_rate": "135.00",
+          "profit_percentage": "22.73",
+          "gst": 12,
+          "convert_unit": 1,
+          "rate_per_unit": 110
+        }
+      ]
+    },
+    {
+      "_id": "PI00002",
+      "invoice_no": "RKL/2025/2105",
+      "invoice_date": "2025-11-20",
+      "total_amount": 980,
+      "discount_percent": 0,
+      "discount_amount": 0,
+      "amount_payable": 980,
+      "supplier": {
+        "id": "SUP002",
+        "name": "Reliable Drug Agency"
+      },
+      "items": [
+        {
+          "medicine_id": "MED0309",
+          "name": "Multivitamin Syrup 200ml",
+          "batch_no": "MVS/25L",
+          "expiry_date": "2027-10-01",
+          "quantity": 20,
+          "free": 2,
+          "purchase_rate": 49,
+          "mrp": "65.00",
+          "selling_rate": "60.00",
+          "profit_percentage": "22.45",
+          "gst": 18,
+          "convert_unit": 1,
+          "rate_per_unit": 49
+        }
+      ]
+    },
+    {
+      "_id": "PI00003",
+      "invoice_no": "PDL/2025/0075",
+      "invoice_date": "2025-11-21",
+      "total_amount": 3450,
+      "discount_percent": 10,
+      "discount_amount": 345,
+      "amount_payable": 3105,
+      "supplier": {
+        "id": "SUP003",
+        "name": "Prime Distribution Ltd."
+      },
+      "items": [
+        {
+          "medicine_id": "MED0412",
+          "name": "Atorvastatin 10mg (30's)",
+          "batch_no": "AT10/25D",
+          "expiry_date": "2026-08-01",
+          "quantity": 15,
+          "free": 0,
+          "purchase_rate": 230,
+          "mrp": "290.00",
+          "selling_rate": "280.00",
+          "profit_percentage": "21.74",
+          "gst": 5,
+          "convert_unit": 1,
+          "rate_per_unit": 230
+        }
+      ]
+    },
+    {
+      "_id": "PI00004",
+      "invoice_no": "ABC/2025/1002",
+      "invoice_date": "2025-11-22",
+      "total_amount": 800,
+      "discount_percent": 5,
+      "discount_amount": 40,
+      "amount_payable": 760,
+      "supplier": {
+        "id": "SUP001",
+        "name": "Apollo Pharma Distributors"
+      },
+      "items": [
+        {
+          "medicine_id": "MED0550",
+          "name": "Cough Syrup (Sugar-Free) 100ml",
+          "batch_no": "CS/SF/25A",
+          "expiry_date": "2027-03-15",
+          "quantity": 10,
+          "free": 0,
+          "purchase_rate": 80,
+          "mrp": "100.00",
+          "selling_rate": "95.00",
+          "profit_percentage": "18.75",
+          "gst": 12,
+          "convert_unit": 1,
+          "rate_per_unit": 80
+        }
+      ]
+    },
+    {
+      "_id": "PI00005",
+      "invoice_no": "RKL/2025/2106",
+      "invoice_date": "2025-11-23",
+      "total_amount": 420,
+      "discount_percent": 0,
+      "discount_amount": 0,
+      "amount_payable": 420,
+      "supplier": {
+        "id": "SUP002",
+        "name": "Reliable Drug Agency"
+      },
+      "items": [
+        {
+          "medicine_id": "MED0601",
+          "name": "Pain Relief Gel 30g",
+          "batch_no": "PRG/25Z",
+          "expiry_date": "2026-11-01",
+          "quantity": 12,
+          "free": 0,
+          "purchase_rate": 35,
+          "mrp": "50.00",
+          "selling_rate": "48.00",
+          "profit_percentage": "37.14",
+          "gst": 18,
+          "convert_unit": 1,
+          "rate_per_unit": 35
+        }
+      ]
+    },
+    {
+      "_id": "PI00006",
+      "invoice_no": "PDL/2025/0076",
+      "invoice_date": "2025-11-24",
+      "total_amount": 750,
+      "discount_percent": 10,
+      "discount_amount": 75,
+      "amount_payable": 675,
+      "supplier": {
+        "id": "SUP003",
+        "name": "Prime Distribution Ltd."
+      },
+      "items": [
+        {
+          "medicine_id": "MED0710",
+          "name": "Diabetic Strips (50's)",
+          "batch_no": "DS/25G",
+          "expiry_date": "2026-05-30",
+          "quantity": 5,
+          "free": 0,
+          "purchase_rate": 150,
+          "mrp": "190.00",
+          "selling_rate": "185.00",
+          "profit_percentage": "23.33",
+          "gst": 5,
+          "convert_unit": 1,
+          "rate_per_unit": 150
+        }
+      ]
+    },
+    {
+      "_id": "PI00007",
+      "invoice_no": "ABC/2025/1003",
+      "invoice_date": "2025-11-25",
+      "total_amount": 2500,
+      "discount_percent": 5,
+      "discount_amount": 125,
+      "amount_payable": 2375,
+      "supplier": {
+        "id": "SUP001",
+        "name": "Apollo Pharma Distributors"
+      },
+      "items": [
+        {
+          "medicine_id": "MED0800",
+          "name": "Fever Thermometer",
+          "batch_no": "FT/25P",
+          "expiry_date": "N/A",
+          "quantity": 25,
+          "free": 0,
+          "purchase_rate": 100,
+          "mrp": "140.00",
+          "selling_rate": "135.00",
+          "profit_percentage": "35.00",
+          "gst": 12,
+          "convert_unit": 1,
+          "rate_per_unit": 100
+        }
+      ]
+    },
+    {
+      "_id": "PI00008",
+      "invoice_no": "RKL/2025/2107",
+      "invoice_date": "2025-11-26",
+      "total_amount": 1800,
+      "discount_percent": 0,
+      "discount_amount": 0,
+      "amount_payable": 1800,
+      "supplier": {
+        "id": "SUP002",
+        "name": "Reliable Drug Agency"
+      },
+      "items": [
+        {
+          "medicine_id": "MED0901",
+          "name": "Vitamin D3 Tablets (60's)",
+          "batch_no": "VD3/25Q",
+          "expiry_date": "2028-01-31",
+          "quantity": 30,
+          "free": 3,
+          "purchase_rate": 60,
+          "mrp": "85.00",
+          "selling_rate": "80.00",
+          "profit_percentage": "33.33",
+          "gst": 5,
+          "convert_unit": 1,
+          "rate_per_unit": 60
+        }
+      ]
+    },
+    {
+      "_id": "PI00009",
+      "invoice_no": "PDL/2025/0077",
+      "invoice_date": "2025-11-27",
+      "total_amount": 1200,
+      "discount_percent": 10,
+      "discount_amount": 120,
+      "amount_payable": 1080,
+      "supplier": {
+        "id": "SUP003",
+        "name": "Prime Distribution Ltd."
+      },
+      "items": [
+        {
+          "medicine_id": "MED1005",
+          "name": "Anti-Fungal Cream 15g",
+          "batch_no": "AFC/25R",
+          "expiry_date": "2026-09-01",
+          "quantity": 20,
+          "free": 0,
+          "purchase_rate": 60,
+          "mrp": "90.00",
+          "selling_rate": "85.00",
+          "profit_percentage": "41.67",
+          "gst": 18,
+          "convert_unit": 1,
+          "rate_per_unit": 60
+        }
+      ]
+    },
+    {
+      "_id": "PI00010",
+      "invoice_no": "ABC/2025/1004",
+      "invoice_date": "2025-11-28",
+      "total_amount": 2100,
+      "discount_percent": 5,
+      "discount_amount": 105,
+      "amount_payable": 1995,
+      "supplier": {
+        "id": "SUP001",
+        "name": "Apollo Pharma Distributors"
+      },
+      "items": [
+        {
+          "medicine_id": "MED1111",
+          "name": "Cetirizine Tablets 10mg (10's)",
+          "batch_no": "CET/25S",
+          "expiry_date": "2027-04-01",
+          "quantity": 50,
+          "free": 5,
+          "purchase_rate": 30,
+          "mrp": "45.00",
+          "selling_rate": "40.00",
+          "profit_percentage": "33.33",
+          "gst": 5,
+          "convert_unit": 1,
+          "rate_per_unit": 30
+        },
+        {
+          "medicine_id": "MED1200",
+          "name": "Gauze Rolls 4 Inch",
+          "batch_no": "GR/25T",
+          "expiry_date": "N/A",
+          "quantity": 20,
+          "free": 0,
+          "purchase_rate": 30,
+          "mrp": "50.00",
+          "selling_rate": "45.00",
+          "profit_percentage": "50.00",
+          "gst": 12,
+          "convert_unit": 1,
+          "rate_per_unit": 30
+        }
+      ]
+    },
+    {
+      "id": "1444",
+      "_id": "NewData",
+      "invoice_no": "xyz/2025/1001",
+      "invoice_date": "2025-11-20",
+      "total_amount": 2550,
+      "discount_percent": 5,
+      "discount_amount": 77.5,
+      "amount_payable": 1472.5,
+      "supplier": {
+        "id": "SUP001",
+        "name": "Apollo Pharma Distributors"
+      },
+      "items": [
+        {
+          "medicine_id": "MED0101",
+          "name": "Amoxicillin 500mg (10's)",
+          "batch_no": "AX500/25C",
+          "expiry_date": "2027-06-30",
+          "quantity": 10,
+          "free": 1,
+          "purchase_rate": 100,
+          "mrp": "120.00",
+          "selling_rate": "115.00",
+          "profit_percentage": "15.00",
+          "gst": 5,
+          "convert_unit": 1,
+          "rate_per_unit": 100
+        },
+        {
+          "medicine_id": "MED0205",
+          "name": "Paracetamol 650mg (10's)",
+          "batch_no": "PC650/25F",
+          "expiry_date": "2026-12-31",
+          "quantity": 5,
+          "free": 0,
+          "purchase_rate": 110,
+          "mrp": "140.00",
+          "selling_rate": "135.00",
+          "profit_percentage": "22.73",
+          "gst": 12,
+          "convert_unit": 1,
+          "rate_per_unit": 110
+        }
+      ]
+    }
+  ]
 }

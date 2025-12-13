@@ -1,4 +1,6 @@
 export const modules = [
+    
+        { name: "Sales Manager", path: "/sales-manager" },
         { name: "Purchase Manager", path: "/purchase-manager" },
         { name: "Medicine Manager", path: "/medicine-manager" },
         // { name: "Batch Manager", path: "/batch-manager" },
