@@ -14,7 +14,6 @@ export const AddPurchase = () => {
   const [items, setitems] = useState([])
 
 
-  // const [amount_payable, setamount_payable] = useState(0);
   const [total_amount, settotal_amount] = useState(0)
   const [discount_percent, setdiscount_percent] = useState(0)
   const discount_amount = total_amount * discount_percent / 100;
@@ -194,9 +193,10 @@ export const AddPurchase = () => {
     <div >
       <div className='fw-bold m-2'>AddPurchase</div>
 
-      <div className=' d-flex  gap-2'>
-        <div className='col-9 bg-white rounded shadow p-4  border d-flex flex-column ' style={{ height: '70vh' }}>
+      <div className=' d-flex  justify-content-between alig-items-center gap-2'>
 
+        {/* Left Column Add Invoice  */}
+        <div className='col-9  rounded shadow p-4  border d-flex flex-column ' style={{ height: '70vh' }}>
 
           {/* Invoice Header */}
           <div className='d-flex justify-content-between gap-3 flex-shrink-0'>
@@ -226,7 +226,6 @@ export const AddPurchase = () => {
               </select>
             </div>
           </div>
-
 
           {/* Items Table */}
           <div className='flex-grow-1 overflow-auto'>
@@ -269,120 +268,122 @@ export const AddPurchase = () => {
             </div>
           </div>
 
-          {/* Add Item Modal */}
-          <div className='modal fade' id='item-modal' ref={itemModalRef}>
-            <div className='modal-dialog modal-lg'>
-              <div className='modal-content'>
-                <div className='modal-header fs-2'>Add Item</div>
-                <div className='modal-body d-flex row gap-2'>
+        </div>
 
-                  {/* Name -- Batch No */}
-                  <div className='d-flex gap-3'>
-                    <div className='flex-fill'>
-                      <label htmlFor="">Name</label>
-                      <input type="text" name="name" value={name} placeholder='Enter Name' onChange={(e) => { setname(e.target.value) }} className='form-control' />
-                    </div>
-                    <div className='flex-fill'>
-                      <label htmlFor="">Batch No.</label>
-                      <input type="text" name="batch_no" value={batch_no} placeholder='Enter Batch' onChange={(e) => { setbatch_no(e.target.value) }} className='form-control' />
-                    </div>
-                  </div>
+        {/* Right Column Discount + Invoice Summary */}
+        <div className='col-3 '>
 
-                  {/* Expiry -- Convert Unit -- GST */}
-                  <div className='d-flex gap-3'>
-                    <div className='flex-fill'>
-                      <label htmlFor="">Expiry Date</label>
-                      <input type="date" name="expiry_date" value={expiry_date} onChange={(e) => { setexpiry_date(e.target.value) }} className='form-control' />
-                    </div>
-                    <div className='flex-fill'>
-                      <label htmlFor="">Convert Unit</label>
-                      <input type="number" name="convert_unit" value={convert_unit} placeholder='Enter Convert Unit' onChange={(e) => { setconvert_unit(e.target.value) }} className='form-control' />
-                    </div>
-                    <div className='flex-fill'>
-                      <label htmlFor="">GST</label>
-                      <select name="gst" value={gst} onChange={(e) => { setgst(e.target.value) }} className='form-select'>
-                        <option vlaue="" disabled
-                        >--Select GST Rate--</option>
-                        <option value="0">0%</option>
-                        <option value="5">5%</option>
-                        <option value="12">12%</option>
-                      </select>
-                    </div>
+          <div className='mb-3 card p-3 shadow'>
+            <label className='fw-bold mb-2 text-success'>Discount</label>
+            <input type="number" name="discount_percent" className='form-control' placeholder='Enter Discount %' min={0} max={100} onChange={(e) => { setdiscount_percent(e.target.value) }} />
+          </div>
+          <div className='card p-3 shadow'>
+            <h5 className="mb-1 fw-bold text-primary">Invoice Summary</h5>
+            <div className="d-flex justify-content-between py-2 border-bottom">
+              <span className="fw-semibold">Total Amount:</span>
+              <span className="text-dark">{total_amount}</span>
+            </div>
 
+            <div className="d-flex justify-content-between py-2 border-bottom">
+              <span className="fw-semibold">Discount Percent:</span>
+              <span className="text-dark">{discount_percent}%</span>
+            </div>
 
-                  </div>
+            <div className="d-flex justify-content-between py-2 border-bottom">
+              <span className="fw-semibold">Discount Amount:</span>
+              <span className="text-dark">{discount_amount}</span>
+            </div>
 
-                  {/* Quantity -- Free */}
-                  <div className='d-flex gap-3'>
-                    <div className='flex-fill'>
-                      <label htmlFor="">Quantity</label>
-                      <input type="number" name="quantity" value={quantity} placeholder='Enter Quantity' onChange={(e) => { setquantity(e.target.value) }} className='form-control' />
-                    </div>
-                    <div className='flex-fill'>
-                      <label htmlFor="">Free</label>
-                      <input type="number" name="free" value={free} placeholder='Enter Free Quantity' onChange={(e) => { setfree(e.target.value) }} className='form-control' />
-                    </div>
-                  </div>
-
-                  {/* Purchase Rate -- MRP */}
-                  <div className='d-flex gap-3'>
-                    <div className='flex-fill'>
-                      <label htmlFor="">Purchase Rate</label>
-                      <input type="number" name="purchase_rate" value={purchase_rate} placeholder='Enter Purchase Rate' onChange={(e) => { setpurchase_rate(e.target.value) }} className='form-control' />
-                    </div>
-                    <div className='flex-fill'>
-                      <label htmlFor="">MRP</label>
-                      <input type="number" name="mrp" value={mrp} placeholder='Enter MRP' onChange={(e) => { setmrp(e.target.value) }} className='form-control' />
-                    </div>
-                  </div>
-
-                  {/* Selling Rate */}
-                  <div className='flex-fill'>
-                    <label htmlFor="">Selling Rate</label>
-                    <input type="number" name="selling_rate" value={selling_rate} placeholder='Enter Selling Rate' onChange={(e) => { setselling_rate(e.target.value) }} className='form-control' />
-                  </div>
-
-                </div>
-
-                <div className='modal-footer'>
-                  <button className='btn btn-warning w-25' onClick={HandleItemSave} >Save</button>
-                </div>
-              </div>
+            <div className="d-flex justify-content-between py-2">
+              <span className="fw-semibold">Amount Payable:</span>
+              <span className="fw-bold text-success">{amount_payable}</span>
             </div>
           </div>
-
         </div>
-        <div className='col-3 card p-3 shadow'>
 
-          <div>
-            <label htmlFor="">Discount</label>
-            <input type="number" name="discount_percent" className='form-control' placeholder='Enter Discount %' min={0} onChange={(e) => { setdiscount_percent(e.target.value) }} />
+      </div>
+
+      {/* Add Item Modal */}
+      <div className='modal fade' id='item-modal' ref={itemModalRef}>
+        <div className='modal-dialog modal-lg'>
+          <div className='modal-content'>
+            <div className='modal-header fs-2'>Add Item</div>
+            <div className='modal-body d-flex row gap-2'>
+
+              {/* Name -- Batch No */}
+              <div className='d-flex gap-3'>
+                <div className='flex-fill'>
+                  <label htmlFor="">Name</label>
+                  <input type="text" name="name" value={name} placeholder='Enter Name' onChange={(e) => { setname(e.target.value) }} className='form-control' />
+                </div>
+                <div className='flex-fill'>
+                  <label htmlFor="">Batch No.</label>
+                  <input type="text" name="batch_no" value={batch_no} placeholder='Enter Batch' onChange={(e) => { setbatch_no(e.target.value) }} className='form-control' />
+                </div>
+              </div>
+
+              {/* Expiry -- Convert Unit -- GST */}
+              <div className='d-flex gap-3'>
+                <div className='flex-fill'>
+                  <label htmlFor="">Expiry Date</label>
+                  <input type="date" name="expiry_date" value={expiry_date} onChange={(e) => { setexpiry_date(e.target.value) }} className='form-control' />
+                </div>
+                <div className='flex-fill'>
+                  <label htmlFor="">Convert Unit</label>
+                  <input type="number" name="convert_unit" value={convert_unit} placeholder='Enter Convert Unit' onChange={(e) => { setconvert_unit(e.target.value) }} className='form-control' />
+                </div>
+                <div className='flex-fill'>
+                  <label htmlFor="">GST</label>
+                  <select name="gst" value={gst} onChange={(e) => { setgst(e.target.value) }} className='form-select'>
+                    <option vlaue="" disabled
+                    >--Select GST Rate--</option>
+                    <option value="0">0%</option>
+                    <option value="5">5%</option>
+                    <option value="12">12%</option>
+                  </select>
+                </div>
+              </div>
+
+              {/* Quantity -- Free */}
+              <div className='d-flex gap-3'>
+                <div className='flex-fill'>
+                  <label htmlFor="">Quantity</label>
+                  <input type="number" name="quantity" value={quantity} placeholder='Enter Quantity' onChange={(e) => { setquantity(e.target.value) }} className='form-control' />
+                </div>
+                <div className='flex-fill'>
+                  <label htmlFor="">Free</label>
+                  <input type="number" name="free" value={free} placeholder='Enter Free Quantity' onChange={(e) => { setfree(e.target.value) }} className='form-control' />
+                </div>
+              </div>
+
+              {/* Purchase Rate -- MRP */}
+              <div className='d-flex gap-3'>
+                <div className='flex-fill'>
+                  <label htmlFor="">Purchase Rate</label>
+                  <input type="number" name="purchase_rate" value={purchase_rate} placeholder='Enter Purchase Rate' onChange={(e) => { setpurchase_rate(e.target.value) }} className='form-control' />
+                </div>
+                <div className='flex-fill'>
+                  <label htmlFor="">MRP</label>
+                  <input type="number" name="mrp" value={mrp} placeholder='Enter MRP' onChange={(e) => { setmrp(e.target.value) }} className='form-control' />
+                </div>
+              </div>
+
+              {/* Selling Rate */}
+              <div className='flex-fill'>
+                <label htmlFor="">Selling Rate</label>
+                <input type="number" name="selling_rate" value={selling_rate} placeholder='Enter Selling Rate' onChange={(e) => { setselling_rate(e.target.value) }} className='form-control' />
+              </div>
+
+            </div>
+
+            <div className='modal-footer'>
+              <button className='btn btn-warning w-25' onClick={HandleItemSave} >Save</button>
+            </div>
           </div>
-          <h5 className="mb-1 fw-bold text-primary">Invoice Summary</h5>
-
-          <div className="d-flex justify-content-between py-2 border-bottom">
-            <span className="fw-semibold">Total Amount:</span>
-            <span className="text-dark">{total_amount}</span>
-          </div>
-
-          <div className="d-flex justify-content-between py-2 border-bottom">
-            <span className="fw-semibold">Discount Percent:</span>
-            <span className="text-dark">{discount_percent}%</span>
-          </div>
-
-          <div className="d-flex justify-content-between py-2 border-bottom">
-            <span className="fw-semibold">Discount Amount:</span>
-            <span className="text-dark">-{discount_amount}</span>
-          </div>
-
-          <div className="d-flex justify-content-between py-2">
-            <span className="fw-semibold">Amount Payable:</span>
-            <span className="fw-bold text-success">{amount_payable}</span>
-          </div>
-
         </div>
       </div>
-    </div >
+
+    </div>
 
 
   )
