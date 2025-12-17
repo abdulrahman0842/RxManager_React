@@ -43,7 +43,7 @@ export const UpdateInvoice = () => {
 
         console.log(invoice);
 
-    }, [])
+    }, [invoice])
 
     function HandleItemSave() {
         if (!ValidateInput()) {
@@ -177,219 +177,454 @@ export const UpdateInvoice = () => {
 
     return (
         <>
-            <div className='fw-bold m-2'>Update Invoice: {invoice.invoice_no} </div>
+            <div className="d-flex justify-content-between align-items-center mb-3">
+                <h5 className="fw-bold text-primary mb-0">
+                    <i className="bi bi-pencil-square me-2"></i>
+                    Update Invoice
+                    <span className="text-muted ms-2 fs-6">
+                        ({invoice.invoice_no})
+                    </span>
+                </h5>
+            </div>
             <div className='d-flex gap-3 '>
 
-                <div className='col-9 border rounded p-3 shadow d-flex  flex-column' style={{ height: '70vh' }}>
+                <div className='col-9 border rounded shadow-sm p-3 d-flex flex-column bg-white' style={{ height: '70vh' }}>
 
                     {/* Invoice Header */}
-                    <div className='d-flex justify-content-between gap-3 flex-shrink-0 mb-2'>
-                        <div className='flex-fill'>
-                            <label htmlFor="">Invoice No.</label>
-                            <div>{invoice_no}</div>
+                    <div className="d-flex gap-3 mb-3 flex-shrink-0">
+                        <div className="flex-fill">
+                            <label className="form-label fw-semibold">Invoice No</label>
+                            <div className="form-control-plaintext fw-bold">
+                                {invoice_no}
+                            </div>
                         </div>
-                        <div className='flex-fill'>
-                            <label htmlFor="">Invoice Date</label>
-                            <input type="date" name="invoice_date" value={invoice_date} onChange={(e) => {
-                                setinvoice_date(e.target.value)
 
-                            }} className='form-control' />
+                        <div className="flex-fill">
+                            <label className="form-label fw-semibold">Invoice Date</label>
+                            <input
+                                type="date"
+                                className="form-control"
+                                value={invoice_date}
+                                onChange={(e) => setinvoice_date(e.target.value)}
+                            />
                         </div>
-                        <div className='flex-fill'>
-                            <label htmlFor="">Supplier</label>
-                            <select className='form-select' name="selectedSupplier" value={selectedSupplier} onChange={(e) => {
-                                setselectedSupplier(e.target.value)
 
-                            }} >
-                                <option disabled>--Select Supplier--</option>
-                                {suppliers.map(supplier => (
-                                    <option value={supplier.name} key={supplier.name} >{supplier.name}</option>))}
+                        <div className="flex-fill">
+                            <label className="form-label fw-semibold">Supplier</label>
+                            <select
+                                className="form-select"
+                                value={selectedSupplier}
+                                onChange={(e) => setselectedSupplier(e.target.value)}
+                            >
+                                <option disabled>-- Select Supplier --</option>
+                                {suppliers.map((s) => (
+                                    <option key={s.name} value={s.name}>
+                                        {s.name}
+                                    </option>
+                                ))}
                             </select>
                         </div>
                     </div>
+
                     {/* Items Table */}
-                    <div className='flex-grow-1 overflow-auto'>
-                        <table className='table table-hover'>
-                            <thead>
+                    <div className="flex-grow-1 overflow-auto border rounded">
+                        <table className="table table-hover align-middle mb-0">
+
+                            <thead className="table-light position-sticky top-0">
                                 <tr>
-                                    <th>Sr.No</th>
+                                    <th>#</th>
                                     <th>Name</th>
                                     <th>Batch</th>
-                                    <th>Quantity</th>
-                                    <th>Free</th>
-                                    <th>Purchase Rate</th>
-                                    <th>MRP</th>
-                                    <th>Selling Rate</th>
-                                    <th>Actions</th>
+                                    <th className="text-end">Qty</th>
+                                    <th className="text-end">Free</th>
+                                    <th className="text-end">Purchase</th>
+                                    <th className="text-end">MRP</th>
+                                    <th className="text-end">Selling</th>
+                                    <th className="text-center">Actions</th>
                                 </tr>
                             </thead>
+
                             <tbody>
+                                {items.length === 0 && (
+                                    <tr>
+                                        <td colSpan="9" className="text-center text-muted py-4">
+                                            <i className="bi bi-inbox fs-4 d-block mb-1"></i>
+                                            No items added
+                                        </td>
+                                    </tr>
+                                )}
+
                                 {items.map((item, index) => (
                                     <tr key={index}>
                                         <td>{index + 1}</td>
-                                        <td>{item.name}</td>
+                                        <td className="fw-semibold">{item.name}</td>
                                         <td>{item.batch_no}</td>
-                                        <td>{item.quantity}</td>
-                                        <td>{item.free}</td>
-                                        <td>{item.purchase_rate}</td>
-                                        <td>{item.mrp}</td>
-                                        <td>{item.selling_rate}</td>
-                                        <td className='d-flex'>
-                                            <div className='bi bi-pen btn text-warning' data-bs-toggle="modal" data-bs-target="#edit-item-modal" onClick={() => {
-                                                seteditItem({ ...item })
-                                            }}></div>
-                                            <div className='bi bi-trash btn text-danger' data-bs-toggle="modal" data-bs-target="#delete-item-modal"
-                                                onClick={() => { setdeleteItem({ ...item }) }}></div>
+                                        <td className="text-end">{item.quantity}</td>
+                                        <td className="text-end">{item.free}</td>
+                                        <td className="text-end">{item.purchase_rate}</td>
+                                        <td className="text-end">{item.mrp}</td>
+                                        <td className="text-end">{item.selling_rate}</td>
+
+                                        <td className="text-center">
+                                            <div className="d-flex justify-content-center gap-2">
+                                                <button
+                                                    className="btn btn-sm btn-outline-warning"
+                                                    title="Edit Item"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#edit-item-modal"
+                                                    onClick={() => seteditItem({ ...item })}
+                                                >
+                                                    <i className="bi bi-pencil"></i>
+                                                </button>
+
+                                                <button
+                                                    className="btn btn-sm btn-outline-danger"
+                                                    title="Delete Item"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#delete-item-modal"
+                                                    onClick={() => setdeleteItem({ ...item })}
+                                                >
+                                                    <i className="bi bi-trash"></i>
+                                                </button>
+                                            </div>
                                         </td>
                                     </tr>
                                 ))}
                             </tbody>
+
                         </table>
                     </div>
+
                     {/* Bottom Action Buttons */}
-                    <div className='d-flex gap-4 justify-content-between mt-4 p-2 flex-shrink-0' >
-                        <div className='btn btn-danger w-25'>Back</div>
-                        <div className='w-50 d-flex gap-3'>
-                            <div className='btn btn-outline-secondary flex-fill' data-bs-toggle="modal" data-bs-target="#item-modal">Addd Item</div>
-                            <div className='btn btn-success flex-fill' onClick={HandleInvoiceSave} >Save</div>
+                    <div className="d-flex justify-content-between mt-3 flex-shrink-0">
+                        <button className="btn btn-outline-danger w-25">
+                            <i className="bi bi-arrow-left me-1"></i> Back
+                        </button>
+
+                        <div className="d-flex gap-3 w-50">
+                            <button
+                                className="btn btn-outline-secondary flex-fill"
+                                data-bs-toggle="modal"
+                                data-bs-target="#edit-item-modal"
+                            >
+                                <i className="bi bi-plus-circle me-1"></i> Add Item
+                            </button>
+
+                            <button
+                                className="btn btn-success flex-fill"
+                                onClick={HandleInvoiceSave}
+                            >
+                                <i className="bi bi-check-circle me-1"></i> Save Invoice
+                            </button>
                         </div>
                     </div>
 
                 </div>
                 {/* Summary Card and Discount*/}
-                <div className='col-3 '>
+                <div className="col-3">
 
-                    <div className='mb-3 card p-3 shadow'>
-                        <label className='fw-bold mb-2 text-success'>Discount</label>
-                        <input type="number" name="discount_percent" className='form-control' value={discount_percent} placeholder='Enter Discount %' min={0} max={100} onChange={(e) => { setdiscount_percent(e.target.value) }} />
+                    {/* Discount */}
+                    <div className="card p-3 shadow-sm mb-3">
+                        <label className="fw-bold text-success mb-2">
+                            <i className="bi bi-percent me-1"></i> Discount
+                        </label>
+                        <input
+                            type="number"
+                            className="form-control"
+                            value={discount_percent}
+                            min={0}
+                            max={100}
+                            placeholder="Enter discount %"
+                            onChange={(e) => setdiscount_percent(e.target.value)}
+                        />
                     </div>
-                    <div className='card p-3 shadow'>
-                        <h5 className="mb-1 fw-bold text-primary">Invoice Summary</h5>
-                        <div className="d-flex justify-content-between py-2 border-bottom">
-                            <span className="fw-semibold">Total Amount:</span>
-                            <span className="text-dark">{total_amount}</span>
+
+                    {/* Summary */}
+                    <div className="card p-3 shadow-sm">
+                        <h6 className="fw-bold text-primary mb-3">
+                            Invoice Summary
+                        </h6>
+
+                        <div className="d-flex justify-content-between border-bottom py-2">
+                            <span>Total Amount</span>
+                            <span className="fw-semibold">₹ {total_amount}</span>
                         </div>
 
-                        <div className="d-flex justify-content-between py-2 border-bottom">
-                            <span className="fw-semibold">Discount Percent:</span>
-                            <span className="text-dark">{discount_percent}%</span>
+                        <div className="d-flex justify-content-between border-bottom py-2">
+                            <span>Discount</span>
+                            <span>{discount_percent}%</span>
                         </div>
 
-                        <div className="d-flex justify-content-between py-2 border-bottom">
-                            <span className="fw-semibold">Discount Amount:</span>
-                            <span className="text-dark">{discount_amount}</span>
+                        <div className="d-flex justify-content-between border-bottom py-2">
+                            <span>Discount Amount</span>
+                            <span>₹ {discount_amount}</span>
                         </div>
 
-                        <div className="d-flex justify-content-between py-2">
-                            <span className="fw-semibold">Amount Payable:</span>
-                            <span className="fw-bold text-success">{amount_payable}</span>
+                        <div className="d-flex justify-content-between pt-2">
+                            <span className="fw-semibold">Amount Payable</span>
+                            <span className="fw-bold text-success fs-5">
+                                ₹ {amount_payable}
+                            </span>
                         </div>
                     </div>
+
                 </div>
-
-
 
             </div >
 
 
             {/* Edit Item Modal */}
             < div className='modal fade' id='edit-item-modal' ref={itemModalRef} >
-                <div className='modal-dialog modal-lg'>
+                <div className='modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable'>
                     <div className='modal-content'>
-                        <div className='modal-header'><strong>{editItem.name}</strong></div>
+                        <div className="modal-header bg-light">
+                            <h6 className="modal-title fw-bold text-primary">
+                                <i className="bi bi-pencil-square me-2"></i>
+                                Edit Item
+                                <span className="text-muted ms-2">
+                                    ({editItem.name || "Item"})
+                                </span>
+                            </h6>
+                            <button className="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
 
                         <div className='modal-body d-flex row gap-2'>
-
                             {/* Name -- Batch No */}
-                            <div className='d-flex gap-3'>
-                                <div className='flex-fill'>
-                                    <label htmlFor="">Name</label>
-                                    <input type="text" name="name" value={editItem.name} placeholder='Enter Name' onChange={(e) => { seteditItem({ ...editItem, name: e.target.value }) }} className='form-control' />
-                                </div>
-                                <div className='flex-fill'>
-                                    <label htmlFor="">Batch No.</label>
-                                    <input type="text" name="batch_no" value={editItem.batch_no} placeholder='Enter Batch' onChange={(e) => { seteditItem({ ...editItem, batch_no: e.target.value }) }} className='form-control' />
+                            <div className="mb-3">
+                                <h6 className="text-secondary fw-semibold mb-2">
+                                    Basic Details
+                                </h6>
+
+                                <div className="row g-3">
+                                    <div className="col-md-6">
+                                        <label className="form-label">Item Name</label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            value={editItem.name}
+                                            onChange={(e) =>
+                                                seteditItem({ ...editItem, name: e.target.value })
+                                            }
+                                        />
+                                    </div>
+
+                                    <div className="col-md-6">
+                                        <label className="form-label">Batch No</label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            value={editItem.batch_no}
+                                            onChange={(e) =>
+                                                seteditItem({ ...editItem, batch_no: e.target.value })
+                                            }
+                                        />
+                                    </div>
                                 </div>
                             </div>
 
                             {/* Expiry -- Convert Unit -- GST */}
-                            <div className='d-flex gap-3'>
-                                <div className='flex-fill'>
-                                    <label htmlFor="">Expiry Date</label>
-                                    <input type="date" name="expiry_date" value={editItem.expiry_date} onChange={(e) => { seteditItem({ ...editItem, expiry_date: e.target.value }) }} className='form-control' />
-                                </div>
-                                <div className='flex-fill'>
-                                    <label htmlFor="">Convert Unit</label>
-                                    <input type="number" name="convert_unit" value={editItem.convert_unit} placeholder='Enter Convert Unit' onChange={(e) => { seteditItem({ ...editItem, convert_unit: e.target.value }) }} className='form-control' />
-                                </div>
-                                <div className='flex-fill'>
-                                    <label htmlFor="">GST</label>
-                                    <select name="gst" value={editItem.gst} onChange={(e) => { seteditItem({ ...editItem, gst: e.target.value }) }} className='form-select'>
-                                        <option vlaue="" disabled
-                                        >--Select GST Rate--</option>
-                                        <option value="0">0%</option>
-                                        <option value="5">5%</option>
-                                        <option value="12">12%</option>
-                                    </select>
-                                </div>
+                            <div className="mb-3">
+                                <h6 className="text-secondary fw-semibold mb-2">
+                                    Stock & Tax
+                                </h6>
 
+                                <div className="row g-3">
+                                    <div className="col-md-4">
+                                        <label className="form-label">Expiry Date</label>
+                                        <input
+                                            type="date"
+                                            className="form-control"
+                                            value={editItem.expiry_date}
+                                            onChange={(e) =>
+                                                seteditItem({ ...editItem, expiry_date: e.target.value })
+                                            }
+                                        />
+                                    </div>
 
+                                    <div className="col-md-4">
+                                        <label className="form-label">Convert Unit</label>
+                                        <input
+                                            type="number"
+                                            className="form-control"
+                                            value={editItem.convert_unit}
+                                            onChange={(e) =>
+                                                seteditItem({ ...editItem, convert_unit: e.target.value })
+                                            }
+                                        />
+                                    </div>
+
+                                    <div className="col-md-4">
+                                        <label className="form-label">GST</label>
+                                        <select
+                                            className="form-select"
+                                            value={editItem.gst}
+                                            onChange={(e) =>
+                                                seteditItem({ ...editItem, gst: e.target.value })
+                                            }
+                                        >
+                                            <option disabled value="">
+                                                -- Select GST --
+                                            </option>
+                                            <option value="0">0%</option>
+                                            <option value="5">5%</option>
+                                            <option value="12">12%</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
 
                             {/* Quantity -- Free */}
-                            <div className='d-flex gap-3'>
-                                <div className='flex-fill'>
-                                    <label htmlFor="">Quantity</label>
-                                    <input type="number" name="quantity" value={editItem.quantity} placeholder='Enter Quantity' onChange={(e) => { seteditItem({ ...editItem, quantity: e.target.value }) }} className='form-control' />
-                                </div>
-                                <div className='flex-fill'>
-                                    <label htmlFor="">Free</label>
-                                    <input type="number" name="free" value={editItem.free} placeholder='Enter Free Quantity' onChange={(e) => { seteditItem({ ...editItem, free: e.target.value }) }} className='form-control' />
+                            <div className="mb-3">
+                                <div className="row g-3">
+                                    <div className="col-md-6">
+                                        <label className="form-label">Quantity</label>
+                                        <input
+                                            type="number"
+                                            className="form-control"
+                                            value={editItem.quantity}
+                                            onChange={(e) =>
+                                                seteditItem({ ...editItem, quantity: e.target.value })
+                                            }
+                                        />
+                                    </div>
+
+                                    <div className="col-md-6">
+                                        <label className="form-label">Free</label>
+                                        <input
+                                            type="number"
+                                            className="form-control"
+                                            value={editItem.free}
+                                            onChange={(e) =>
+                                                seteditItem({ ...editItem, free: e.target.value })
+                                            }
+                                        />
+                                    </div>
                                 </div>
                             </div>
 
                             {/* Purchase Rate -- MRP */}
-                            <div className='d-flex gap-3'>
-                                <div className='flex-fill'>
-                                    <label htmlFor="">Purchase Rate</label>
-                                    <input type="number" name="purchase_rate" value={editItem.purchase_rate} placeholder='Enter Purchase Rate' onChange={(e) => { seteditItem({ ...editItem, purchase_rate: e.target.value }) }} className='form-control' />
-                                </div>
-                                <div className='flex-fill'>
-                                    <label htmlFor="">MRP</label>
-                                    <input type="number" name="mrp" value={editItem.mrp} placeholder='Enter MRP' onChange={(e) => { seteditItem({ ...editItem, mrp: e.target.value }) }} className='form-control' />
-                                </div>
-                            </div>
+                            <div>
+                                <div className="row g-3">
+                                    <div className="col-md-4">
+                                        <label className="form-label">Purchase Rate</label>
+                                        <input
+                                            type="number"
+                                            className="form-control"
+                                            value={editItem.purchase_rate}
+                                            onChange={(e) =>
+                                                seteditItem({ ...editItem, purchase_rate: e.target.value })
+                                            }
+                                        />
+                                    </div>
 
-                            {/* Selling Rate */}
-                            <div className='flex-fill'>
-                                <label htmlFor="">Selling Rate</label>
-                                <input type="number" name="selling_rate" value={editItem.selling_rate} placeholder='Enter Selling Rate' onChange={(e) => { seteditItem({ ...editItem, selling_rate: e.target.value }) }} className='form-control' />
+                                    <div className="col-md-4">
+                                        <label className="form-label">MRP</label>
+                                        <input
+                                            type="number"
+                                            className="form-control"
+                                            value={editItem.mrp}
+                                            onChange={(e) =>
+                                                seteditItem({ ...editItem, mrp: e.target.value })
+                                            }
+                                        />
+                                    </div>
+
+                                    <div className="col-md-4">
+                                        <label className="form-label">Selling Rate</label>
+                                        <input
+                                            type="number"
+                                            className="form-control"
+                                            value={editItem.selling_rate}
+                                            onChange={(e) =>
+                                                seteditItem({ ...editItem, selling_rate: e.target.value })
+                                            }
+                                        />
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
 
-                        <div
-                            className='modal-footer'>
-                            <button className='btn btn-outline-secondary w-25' data-bs-dismiss="modal" >Cancel</button>
-                            <button className='btn btn-warning w-25' onClick={HandleItemSave} >Save</button>
+                        <div className="modal-footer bg-light">
+                            <button
+                                className="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                            >
+                                Cancel
+                            </button>
+
+                            <button
+                                className="btn btn-warning"
+                                onClick={HandleItemSave}
+                            >
+                                <i className="bi bi-save me-1"></i>
+                                Save Changes
+                            </button>
                         </div>
+
 
                     </div>
                 </div>
             </div >
 
             {/* Delete Item Modal */}
-            < div className='modal fade' id='delete-item-modal' ref={deleteModalRef} >
-                <div className='modal-dialog'>
-                    <div className='modal-content'>
-                        <div className='modal-body text-danger fw-bold fs-5'>Delete {deleteItem?.name || ""}</div>
-                        <div className='modal-footer'>
-                            <button className='btn' data-bs-dismiss='modal'>Cancel</button>
-                            <button className='btn btn-danger' onClick={HandleDelete} >Delete</button>
+            <div className="modal fade" id="delete-item-modal" ref={deleteModalRef}>
+                <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+
+                        {/* Header */}
+                        <div className="modal-header bg-light">
+                            <h6 className="modal-title text-danger fw-bold">
+                                <i className="bi bi-exclamation-triangle me-2"></i>
+                                Confirm Delete
+                            </h6>
+                            <button className="btn-close" data-bs-dismiss="modal"></button>
                         </div>
+
+                        {/* Body */}
+                        <div className="modal-body">
+                            <p className="mb-2">
+                                Are you sure you want to delete the following item?
+                            </p>
+
+                            <div className="border rounded p-2 bg-light">
+                                <strong className="text-danger">
+                                    {deleteItem?.name || "Selected Item"}
+                                </strong>
+                                {deleteItem?.batch_no && (
+                                    <div className="text-muted small">
+                                        Batch: {deleteItem.batch_no}
+                                    </div>
+                                )}
+                            </div>
+
+                            <p className="text-muted small mt-2 mb-0">
+                                This action cannot be undone.
+                            </p>
+                        </div>
+
+                        {/* Footer */}
+                        <div className="modal-footer bg-light">
+                            <button
+                                className="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                            >
+                                Cancel
+                            </button>
+
+                            <button
+                                className="btn btn-danger"
+                                onClick={HandleDelete}
+                            >
+                                <i className="bi bi-trash me-1"></i>
+                                Delete
+                            </button>
+                        </div>
+
                     </div>
                 </div>
-            </div >
+            </div>
+
         </>
 
     )

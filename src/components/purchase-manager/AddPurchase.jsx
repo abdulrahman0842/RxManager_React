@@ -191,62 +191,87 @@ export const AddPurchase = () => {
 
 
     <div >
-      <div className='fw-bold m-2'>AddPurchase</div>
+      <div className="mb-3">
+        <h4 className="fw-bold text-primary mb-0">Add Purchase Invoice</h4>
+        <small className="text-muted">Create a new purchase entry</small>
+      </div>
+
 
       <div className=' d-flex  justify-content-between alig-items-center gap-2'>
 
         {/* Left Column Add Invoice  */}
-        <div className='col-9  rounded shadow p-4  border d-flex flex-column ' style={{ height: '70vh' }}>
+        <div className='col-9 bg-white rounded shadow-sm border p-4 d-flex flex-column' style={{ height: '70vh' }}>
 
           {/* Invoice Header */}
-          <div className='d-flex justify-content-between gap-3 flex-shrink-0'>
-            <div className='flex-fill'>
-              <label htmlFor="">Invoice No.</label>
-              <input type="text" name="invoice_no" value={invoice_no} placeholder='Enter Invoice No.' onChange={(e) => {
-                setinvoice_no(e.target.value)
-                setisDirty(true);
-              }} className='form-control' />
+          <div className="row g-3 mb-3">
+            <div className="col">
+              <label className="form-label fw-semibold">Invoice No.</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter invoice number"
+                value={invoice_no}
+                onChange={(e) => {
+                  setinvoice_no(e.target.value);
+                  setisDirty(true);
+                }}
+              />
             </div>
-            <div className='flex-fill'>
-              <label htmlFor="">Invoice Date</label>
-              <input type="date" name="invoice_date" value={invoice_date} onChange={(e) => {
-                setinvoice_date(e.target.value)
-                setisDirty(true);
-              }} className='form-control' />
+
+            <div className="col">
+              <label className="form-label fw-semibold">Invoice Date</label>
+              <input
+                type="date"
+                className="form-control"
+                value={invoice_date}
+                onChange={(e) => {
+                  setinvoice_date(e.target.value);
+                  setisDirty(true);
+                }}
+              />
             </div>
-            <div className='flex-fill'>
-              <label htmlFor="">Supplier</label>
-              <select className='form-select' name="selectedSupplier" value={selectedSupplier} onChange={(e) => {
-                setselectedSupplier(e.target.value)
-                setisDirty(true);
-              }} >
-                <option disabled>--Select Supplier--</option>
-                {suppliers.map(supplier => (
-                  <option value={supplier.name} key={supplier.name} >{supplier.name}</option>))}
+
+            <div className="col">
+              <label className="form-label fw-semibold">Supplier</label>
+              <select
+                className="form-select"
+                value={selectedSupplier}
+                onChange={(e) => {
+                  setselectedSupplier(e.target.value);
+                  setisDirty(true);
+                }}
+              >
+                <option disabled>-- Select Supplier --</option>
+                {suppliers.map((s) => (
+                  <option key={s.name} value={s.name}>
+                    {s.name}
+                  </option>
+                ))}
               </select>
             </div>
           </div>
 
+
           {/* Items Table */}
-          <div className='flex-grow-1 overflow-auto'>
-            <table className='table table-hover'>
-              <thead>
+          <div className="flex-grow-1 overflow-auto border rounded">
+            <table className="table table-hover table-sm mb-0">
+              <thead className="table-light sticky-top">
                 <tr>
-                  <th>Sr.No</th>
+                  <th>#</th>
                   <th>Name</th>
                   <th>Batch</th>
-                  <th>Quantity</th>
+                  <th>Qty</th>
                   <th>Free</th>
-                  <th>Purchase Rate</th>
+                  <th>Purchase</th>
                   <th>MRP</th>
-                  <th>Selling Rate</th>
+                  <th>Selling</th>
                 </tr>
               </thead>
               <tbody>
                 {items.map((item, index) => (
                   <tr key={index}>
                     <td>{index + 1}</td>
-                    <td>{item.name}</td>
+                    <td className="fw-semibold">{item.name}</td>
                     <td>{item.batch_no}</td>
                     <td>{item.quantity}</td>
                     <td>{item.free}</td>
@@ -259,46 +284,84 @@ export const AddPurchase = () => {
             </table>
           </div>
 
+
           {/* Bottom Action Buttons */}
-          <div className='d-flex gap-4 justify-content-between mt-4 p-2 flex-shrink-0' >
-            <div className='btn btn-danger w-25'>Back</div>
-            <div className='w-50 d-flex gap-3'>
-              <div className='btn btn-outline-secondary flex-fill' data-bs-toggle="modal" data-bs-target="#item-modal">Addd Item</div>
-              <div className='btn btn-success flex-fill' onClick={HandleInvoiceSave} >Save</div>
+          
+          <div className="d-flex justify-content-between mt-3 flex-shrink-0">
+            <button className="btn btn-outline-danger w-25">
+              <i className="bi bi-arrow-left me-1"></i> Back
+            </button>
+
+            <div className="d-flex gap-3 w-50">
+              <button
+                className="btn btn-outline-secondary flex-fill"
+                data-bs-toggle="modal"
+                data-bs-target="#item-modal"
+              >
+                <i className="bi bi-plus-circle me-1"></i> Add Item
+              </button>
+
+              <button
+                className="btn btn-success flex-fill"
+                onClick={HandleInvoiceSave}
+              >
+                <i className="bi bi-check-circle me-1"></i> Save Invoice
+              </button>
             </div>
           </div>
+
 
         </div>
 
         {/* Right Column Discount + Invoice Summary */}
         <div className='col-3 '>
 
-          <div className='mb-3 card p-3 shadow'>
-            <label className='fw-bold mb-2 text-success'>Discount</label>
-            <input type="number" name="discount_percent" className='form-control' placeholder='Enter Discount %' min={0} max={100} onChange={(e) => { setdiscount_percent(e.target.value) }} />
-          </div>
-          <div className='card p-3 shadow'>
-            <h5 className="mb-1 fw-bold text-primary">Invoice Summary</h5>
-            <div className="d-flex justify-content-between py-2 border-bottom">
-              <span className="fw-semibold">Total Amount:</span>
-              <span className="text-dark">{total_amount}</span>
-            </div>
-
-            <div className="d-flex justify-content-between py-2 border-bottom">
-              <span className="fw-semibold">Discount Percent:</span>
-              <span className="text-dark">{discount_percent}%</span>
-            </div>
-
-            <div className="d-flex justify-content-between py-2 border-bottom">
-              <span className="fw-semibold">Discount Amount:</span>
-              <span className="text-dark">{discount_amount}</span>
-            </div>
-
-            <div className="d-flex justify-content-between py-2">
-              <span className="fw-semibold">Amount Payable:</span>
-              <span className="fw-bold text-success">{amount_payable}</span>
+          <div className="card shadow-sm mb-3">
+            <div className="card-body">
+              <label className="fw-bold text-success mb-2">Discount (%)</label>
+              <input
+                type="number"
+                className="form-control"
+                min={0}
+                max={100}
+                placeholder="Enter discount"
+                onChange={(e) => setdiscount_percent(e.target.value)}
+              />
             </div>
           </div>
+
+          <div className="card shadow-sm">
+            <div className="card-body">
+              <h6 className="fw-bold text-primary mb-3">
+                Invoice Summary
+              </h6>
+
+              <div className="d-flex justify-content-between mb-2">
+                <span>Total Amount</span>
+                <span className="fw-semibold">{total_amount}</span>
+              </div>
+
+              <div className="d-flex justify-content-between mb-2">
+                <span>Discount (%)</span>
+                <span>{discount_percent}%</span>
+              </div>
+
+              <div className="d-flex justify-content-between mb-2">
+                <span>Discount Amount</span>
+                <span>{discount_amount}</span>
+              </div>
+
+              <hr />
+
+              <div className="d-flex justify-content-between fs-5">
+                <span className="fw-bold">Payable</span>
+                <span className="fw-bold text-success">
+                  {amount_payable}
+                </span>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -382,7 +445,6 @@ export const AddPurchase = () => {
           </div>
         </div>
       </div>
-
     </div>
 
 

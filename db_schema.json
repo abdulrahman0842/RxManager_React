@@ -79,6 +79,7 @@
     },
     "item_wise_batches": [
         {
+            "catch": "update the agency , different agency have diffrent purchase rate update agency and store purchase rate and selling rate based on agency",
             "medicine_id": "as45",
             "total_stock": 500,
             "total_batch": 6,
@@ -92,9 +93,14 @@
                     "mrp": 0,
                     "sale_price": 0,
                     "convert_unit": 0,
-                    "rate_per_unit": 0,
+                    "purchase_rate_per_unit": 0,
+                    "selling_rate_per_unit": 0,
+                    "mrp_rate_per_unit": 0,
                     "agencies": [
-                        ""
+                        {
+                            "id": "",
+                            "name": ""
+                        }
                     ]
                 }
             ]
@@ -109,27 +115,64 @@
             "discount_percent": 0,
             "discount_amount": 0,
             "amount_payable": 0,
-            "supplier":{
-                "id":"",
-                "name":""
+            "supplier": {
+                "id": "",
+                "name": ""
             },
             "items": [
                 {
                     "medicine_id": "",
                     "name": "",
                     "batch_no": "",
-                    "expiry_date":"",
+                    "expiry_date": "",
                     "quantity": 0,
                     "free": 0,
                     "purchase_rate": 0,
                     "mrp": "",
-                    "selling_rate":"",
-                    "profit_percentage":"",
+                    "selling_rate": "",
+                    "profit_percentage": "",
                     "gst": 0,
                     "convert_unit": 0,
                     "rate_per_unit": 0
                 }
             ]
+        }
+    ],
+    "sales_invoices": [
+        {
+            "_id": "",
+            "invoice_no": "",
+            "date": "",
+            "patient_details": {
+                "name": "",
+                "phone_no": "",
+                "email": "",
+                "address": ""
+            },
+            "doctor": {
+                "name": "",
+                "liscense_no": "",
+                "qualification": "",
+                "address": ""
+            },
+            "items": [
+                {
+                    "medicine_id": "",
+                    "name": "",
+                    "batch_no": "",
+                    "mrp": 0,
+                    "selling_rate": 0,
+                    "pack_size": 0,
+                    "mrp_per_unit": 0,
+                    "selling_rate_per_unit": 0,
+                    "quantity": 0,
+                    "total": 0
+                }
+            ],
+            "sub_total": 0,
+            "grand_total": 0,
+            "overall_discount_amount": 0,
+            "overall_discount_percent": 0
         }
     ]
 }
