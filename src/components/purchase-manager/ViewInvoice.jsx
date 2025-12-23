@@ -88,7 +88,7 @@ export const ViewInvoice = () => {
                                     <td>{item.free}</td>
                                     <td>{item.purchase_rate}</td>
                                     <td>{item.mrp}</td>
-                                    <td>{item.selling_rate}</td>
+                                    <td>{item.selling_price}</td>
                                     <td>{item.gst}%</td>
                                 </tr>
                             ))}

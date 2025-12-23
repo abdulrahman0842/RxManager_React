@@ -29,7 +29,7 @@ export const AddPurchase = () => {
   const [free, setfree] = useState(null)
   const [purchase_rate, setpurchase_rate] = useState(null);
   const [mrp, setmrp] = useState(null);
-  const [selling_rate, setselling_rate] = useState(null);
+  const [selling_price, setselling_price] = useState(null);
   const [gst, setgst] = useState(0)
   const [convert_unit, setconvert_unit] = useState(null)
 
@@ -64,7 +64,7 @@ export const AddPurchase = () => {
     setfree('');
     setpurchase_rate('');
     setmrp('');
-    setselling_rate('');
+    setselling_price('');
     setgst('0');
     setconvert_unit('');
   }
@@ -105,7 +105,7 @@ export const AddPurchase = () => {
       alert('MRP required')
       return false;
     }
-    if (!selling_rate || isNaN(Number(selling_rate)) || Number(selling_rate) <= 0) {
+    if (!selling_price || isNaN(Number(selling_price)) || Number(selling_price) <= 0) {
       alert('Selling Rate required')
       return false;
     }
@@ -151,7 +151,7 @@ export const AddPurchase = () => {
       free: free,
       purchase_rate: purchase_rate,
       mrp: mrp,
-      selling_rate: selling_rate,
+      selling_price: selling_price,
       gst: gst,
       convert_unit: convert_unit
     }
@@ -277,7 +277,7 @@ export const AddPurchase = () => {
                     <td>{item.free}</td>
                     <td>{item.purchase_rate}</td>
                     <td>{item.mrp}</td>
-                    <td>{item.selling_rate}</td>
+                    <td>{item.selling_price}</td>
                   </tr>
                 ))}
               </tbody>
@@ -434,7 +434,7 @@ export const AddPurchase = () => {
               {/* Selling Rate */}
               <div className='flex-fill'>
                 <label htmlFor="">Selling Rate</label>
-                <input type="number" name="selling_rate" value={selling_rate} placeholder='Enter Selling Rate' onChange={(e) => { setselling_rate(e.target.value) }} className='form-control' />
+                <input type="number" name="selling_price" value={selling_price} placeholder='Enter Selling Rate' onChange={(e) => { setselling_price(e.target.value) }} className='form-control' />
               </div>
 
             </div>

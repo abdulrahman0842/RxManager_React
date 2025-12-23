@@ -94,7 +94,7 @@
                     "sale_price": 0,
                     "convert_unit": 0,
                     "purchase_rate_per_unit": 0,
-                    "selling_rate_per_unit": 0,
+                    "selling_price_per_unit": 0,
                     "mrp_rate_per_unit": 0,
                     "agencies": [
                         {
@@ -129,7 +129,7 @@
                     "free": 0,
                     "purchase_rate": 0,
                     "mrp": "",
-                    "selling_rate": "",
+                    "selling_price": "",
                     "profit_percentage": "",
                     "gst": 0,
                     "convert_unit": 0,
@@ -161,10 +161,10 @@
                     "name": "",
                     "batch_no": "",
                     "mrp": 0,
-                    "selling_rate": 0,
+                    "selling_price": 0,
                     "pack_size": 0,
                     "mrp_per_unit": 0,
-                    "selling_rate_per_unit": 0,
+                    "selling_price_per_unit": 0,
                     "quantity": 0,
                     "total": 0
                 }

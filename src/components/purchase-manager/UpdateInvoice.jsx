@@ -126,7 +126,7 @@ export const UpdateInvoice = () => {
             alert('MRP required')
             return false;
         }
-        if (!editItem.selling_rate || isNaN(Number(editItem.selling_rate)) || Number(editItem.selling_rate) <= 0) {
+        if (!editItem.selling_price || isNaN(Number(editItem.selling_price)) || Number(editItem.selling_price) <= 0) {
             alert('Selling Rate required')
             return false;
         }
@@ -263,7 +263,7 @@ export const UpdateInvoice = () => {
                                         <td className="text-end">{item.free}</td>
                                         <td className="text-end">{item.purchase_rate}</td>
                                         <td className="text-end">{item.mrp}</td>
-                                        <td className="text-end">{item.selling_rate}</td>
+                                        <td className="text-end">{item.selling_price}</td>
 
                                         <td className="text-center">
                                             <div className="d-flex justify-content-center gap-2">
@@ -534,9 +534,9 @@ export const UpdateInvoice = () => {
                                         <input
                                             type="number"
                                             className="form-control"
-                                            value={editItem.selling_rate}
+                                            value={editItem.selling_price}
                                             onChange={(e) =>
-                                                seteditItem({ ...editItem, selling_rate: e.target.value })
+                                                seteditItem({ ...editItem, selling_price: e.target.value })
                                             }
                                         />
                                     </div>

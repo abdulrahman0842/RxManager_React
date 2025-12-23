@@ -12,4 +12,6 @@ export const getMedicinesEndpoint = "http://localhost:5000/medicines";
 
 export const getPurchaseInvoiceEndpoint = "http://localhost:5000/purchase-invoices";
 
+export const getBatchesEndpoint = "http://localhost:5000/batches";
+
 
