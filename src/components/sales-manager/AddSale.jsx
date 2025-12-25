@@ -2,10 +2,14 @@ import axios from 'axios';
 import React, { useEffect, useState, useRef } from 'react'
 
 import { getBatchesEndpoint, getMedicinesEndpoint } from '../../utils/endpoints';
+import { Modal } from 'bootstrap';
 export const AddSale = () => {
     const addItemModalRef = useRef(null);
+    const addItemModalInstance = useRef(null);
     const editItemModalRef = useRef(null);
+    const editItemModalInstance = useRef(null);
     const checkOutModalRef = useRef(null);
+    const checkOutModalInstance = useRef(null);
 
     const [medicines, setmedicines] = useState([]);
     const [filteredMedicines, setfilteredMedicines] = useState([])
@@ -147,11 +151,7 @@ export const AddSale = () => {
         setinvoiceTotalMrp(prev => prev + Number(itemMrpTotal))
         setinvoiceTotalSellingRate(prev => prev + Number(itemSellingRateTotal))
 
-
-        if (addItemModalRef.current && window.bootstrap) {
-            const modalInstance = window.bootstrap.Modal.getInstance(addItemModalRef.current) || new window.bootstrap.Modal.getInstance(addItemModalRef.current)
-            modalInstance.hide()
-        }
+        addItemModalInstance.current?.hide()
     }
 
     function DeleteItem(medicine_id) {
@@ -184,12 +184,44 @@ export const AddSale = () => {
         setselectedItem(null)
         setitemQuantity(0)
 
-        if (editItemModalRef.current && window.bootstrap) {
-            const modalInstance = window.bootstrap.Modal.getInstance(editItemModalRef.current) || new window.bootstrap.Modal.getInstance(editItemModalRef.current)
-            modalInstance.hide()
+        editItemModalInstance.current?.hide();
+
+
+    }
+    function HandleProceed() {
+        if (items.length < 1) {
+            alert('Add atleast one item to proceed.');
+            return;
+        }
+        checkOutModalInstance.current?.show()
+    }
+
+    function SaveInvoice(printInvoice = false) {
+
+        const invoice = {
+            items: items,
+            mrp_total: invoiceTotalMrp,
+            selling_rate_total: invoiceTotalSellingRate,
+            discount_amount: invoiceTotalMrp - invoiceTotalSellingRate,
+            patient_details: patientDetails,
+            doctor_details: doctorDetails
         }
 
-
+        setitems([])
+        setinvoiceTotalMrp(0)
+        setinvoiceTotalSellingRate(0)
+        setpatientDetails({
+            name: null, mobile_no: null
+        })
+        setdoctorDetails({
+            name: null,
+            license_no: null
+        })
+        console.log(invoice)
+        if (printInvoice) {
+            console.log('Printing Invoice... ')
+        }
+        checkOutModalInstance.current?.hide();
     }
 
     useEffect(() => {
@@ -215,6 +247,24 @@ export const AddSale = () => {
 
     }, [query])
 
+    useEffect(() => {
+        if (addItemModalRef.current) {
+            addItemModalInstance.current = new Modal(addItemModalRef.current);
+        }
+        if (editItemModalRef.current) {
+            editItemModalInstance.current = new Modal(editItemModalRef.current);
+        }
+        if (checkOutModalRef.current) {
+            checkOutModalInstance.current = new Modal(checkOutModalRef.current);
+        }
+
+        return () => {
+            addItemModalInstance.current?.dispose()
+            editItemModalInstance.current?.dispose()
+            checkOutModalInstance.current?.dispose();
+        }
+
+    }, [])
 
     return (
         <>
@@ -264,7 +314,10 @@ export const AddSale = () => {
                                             <td>{item.selling_price}</td>
                                             <td>{item.expiry_date}</td>
                                             <td>
-                                                <button className='btn text-warning bi bi-pen' data-bs-toggle="modal" data-bs-target="#edit-item-modal" onClick={() => { setselectedItem(item) }}></button>
+                                                <button className='btn text-warning bi bi-pen' onClick={() => {
+                                                    setselectedItem(item)
+                                                    editItemModalInstance.current?.show();
+                                                }}></button>
                                                 <button className='btn text-danger bi bi-trash' onClick={() => { DeleteItem(item.medicine_id) }}></button>
                                             </td>
                                         </tr>
@@ -282,16 +335,15 @@ export const AddSale = () => {
                             <div className="d-flex gap-3 w-50">
                                 <button
                                     className="btn btn-outline-secondary flex-fill"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#sale-item-modal"
+
+                                    onClick={() => { addItemModalInstance.current?.show() }}
                                 >
                                     <i className="bi bi-plus-circle me-1"></i> Add Item
                                 </button>
 
                                 <button
                                     className="btn btn-success flex-fill"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#patient-doctor-modal"
+                                    onClick={HandleProceed}
 
                                 >
                                     <i className="bi bi-receipt me-1"></i> Proceed
@@ -478,7 +530,7 @@ export const AddSale = () => {
                         </div>
 
                         <div className="modal-footer">
-                            <button className='btn btn-outline-secondary w-25' data-bs-toggle="modal">Cancel</button>
+                            <button className='btn btn-outline-secondary w-25' onClick={() => { addItemModalInstance.current?.hide() }}>Cancel</button>
                             <button className="btn btn-success w-25" onClick={AddItem}>Add</button>
                         </div>
                     </div>
@@ -569,7 +621,9 @@ export const AddSale = () => {
                         <div className="modal-footer">
                             <button
                                 className="btn btn-outline-secondary"
-                                data-bs-dismiss="modal"
+                                onClick={() => {
+                                    editItemModalInstance.current?.hide();
+                                }}
                             >
                                 Cancel
                             </button>
@@ -609,21 +663,27 @@ export const AddSale = () => {
 
                             <div className="col-6">
                                 <label>Doctor Name</label>
-                                <input className="form-control" value={doctorDetails.name} placeholder='Enter Doctor Name' onChange={(e) => { setdoctorDetails({ ...patientDetails, name: e.target.value }) }} />
+                                <input className="form-control" value={doctorDetails.name} placeholder='Enter Doctor Name' onChange={(e) => { setdoctorDetails({ ...doctorDetails, name: e.target.value }) }} />
                             </div>
 
                             <div className="col-6">
                                 <label>Doctor License No</label>
-                                <input className="form-control" value={doctorDetails.license_no} placeholder='Enter Doctor License No.' onChange={(e) => { setdoctorDetails({ ...patientDetails, license_no: e.target.value }) }} />
+                                <input className="form-control" value={doctorDetails.license_no} placeholder='Enter Doctor License No.' onChange={(e) => { setdoctorDetails({ ...doctorDetails, license_no: e.target.value }) }} />
                             </div>
 
                         </div>
 
                         <div className="modal-footer d-flex gap-3">
-                            <button className="btn btn-outline-secondary flex-fill">
+                            <button className="btn btn-outline-secondary flex-fill"
+                                onClick={() => {
+                                    SaveInvoice(false)
+                                }}>
                                 Save Bill
                             </button>
-                            <button className="btn btn-success flex-fill">
+                            <button className="btn btn-success flex-fill"
+                                onClick={() => {
+                                    SaveInvoice(true)
+                                }}>
                                 Save & Print
                             </button>
                         </div>
