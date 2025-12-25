@@ -134,7 +134,7 @@ export const AddSale = () => {
             pack_size: selectedBatch.convert_unit,
             mrp_per_unit: parseFloat(selectedBatch.mrp_per_unit),
             selling_price_per_unit: parseFloat(selectedBatch.selling_price_per_unit),
-            quantity: parseFloat(itemQuantity),
+            quantity: Number(itemQuantity),
             expiry_date: selectedBatch?.expiry_date,
             totalSellingRate: itemSellingRateTotal,
             totalMrp: itemMrpTotal

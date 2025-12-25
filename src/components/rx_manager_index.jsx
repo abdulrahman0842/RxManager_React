@@ -15,6 +15,10 @@ import { ModifyPurchase } from "./purchase-manager/ModifyPurchase";
 import { UpdateInvoice } from "./purchase-manager/UpdateInvoice";
 import { AddPurchase } from "./purchase-manager/AddPurchase";
 import { ViewInvoice } from "./purchase-manager/ViewInvoice";
+import { ViewSalesInvoice } from "./sales-manager/ViewInvoice";
+import { UpdateSaleInvoice } from "./sales-manager/UpdateSaleInvoice";
+
+
 export function RxManagerIndex() {
 
 
@@ -41,6 +45,9 @@ export function RxManagerIndex() {
           <Route path="/sales-manager" element={<SalesHome />} >
             <Route path="add-sale" element={<AddSale />} />
             <Route path="modify-sale" element={<ModifySale />} />
+            <Route path="view-sales-invoice" element={<ViewSalesInvoice />} />
+            <Route path="update-sale-invoice" element={<UpdateSaleInvoice />} />
+
           </Route>
 
 

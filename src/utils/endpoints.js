@@ -1,17 +1,21 @@
-export const getAgenciesEndpoint = "http://localhost:5000/agencies";
+const baseUrl = `http://localhost:5000`
 
-export const getItemTypesEndpoint = "http://localhost:5000/item-types";
+export const getAgenciesEndpoint = `${baseUrl}/agencies`;
 
-export const getStorageEndpoint = "http://localhost:5000/storage";
+export const getItemTypesEndpoint = `${baseUrl}/item-types`;
 
-export const getCompaniesEndpoint = "http://localhost:5000/companies";
+export const getStorageEndpoint = `${baseUrl}/storage`;
 
-export const getContentsEndpoint = "http://localhost:5000/contents";
+export const getCompaniesEndpoint = `${baseUrl}/companies`;
 
-export const getMedicinesEndpoint = "http://localhost:5000/medicines";
+export const getContentsEndpoint = `${baseUrl}/contents`;
 
-export const getPurchaseInvoiceEndpoint = "http://localhost:5000/purchase-invoices";
+export const getMedicinesEndpoint = `${baseUrl}/medicines`;
 
-export const getBatchesEndpoint = "http://localhost:5000/batches";
+export const getPurchaseInvoiceEndpoint = `${baseUrl}/purchase-invoices`;
+
+export const getBatchesEndpoint = `${baseUrl}/batches`;
+
+export const getSalesInvoicesEndpoint = `${baseUrl}/sales-invoices`;
 
 

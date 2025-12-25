@@ -145,15 +145,11 @@
             "date": "",
             "patient_details": {
                 "name": "",
-                "phone_no": "",
-                "email": "",
-                "address": ""
+                "mobile_no": ""
             },
             "doctor": {
                 "name": "",
-                "liscense_no": "",
-                "qualification": "",
-                "address": ""
+                "liscense_no": ""
             },
             "items": [
                 {
@@ -165,14 +161,15 @@
                     "pack_size": 0,
                     "mrp_per_unit": 0,
                     "selling_price_per_unit": 0,
+                    "expiry_date": "",
                     "quantity": 0,
-                    "total": 0
+                    "total_mrp": 0,
+                    "total_selling_rate": 0
                 }
             ],
             "mrp_total": 0,
             "selling_rate_total": 0,
-            "discount_amount": 0,
-            "discount_percent": 0
+            "discount_amount": 0
         }
     ]
 }

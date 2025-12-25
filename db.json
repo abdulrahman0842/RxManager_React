@@ -780,5 +780,199 @@
         }
       ]
     }
+  ],
+  "sales-invoices": [
+    {
+      "_id": "SI001",
+      "invoice_no": "INV-1001",
+      "date": "2025-09-01",
+      "patient_details": {
+        "name": "Rahul Sharma",
+        "mobile_no": "9876543210"
+      },
+      "doctor": {
+        "name": "Dr. Anil Kumar",
+        "liscense_no": "DL-MED-45821"
+      },
+      "items": [
+        {
+          "medicine_id": "MED001",
+          "name": "Paracetamol 500mg",
+          "batch_no": "PCM0925",
+          "mrp": 30,
+          "selling_price": 25,
+          "pack_size": 10,
+          "mrp_per_unit": 3,
+          "selling_price_per_unit": 2.5,
+          "expiry_date": "2026-09-30",
+          "quantity": 2,
+          "total_mrp": 60,
+          "total_selling_rate": 50
+        }
+      ],
+      "mrp_total": 60,
+      "selling_rate_total": 50,
+      "discount_amount": 10
+    },
+    {
+      "_id": "SI002",
+      "invoice_no": "INV-1002",
+      "date": "2025-09-02",
+      "patient_details": {
+        "name": "Ayesha Khan",
+        "mobile_no": "9123456780"
+      },
+      "doctor": {
+        "name": "Dr. Suresh Rao",
+        "liscense_no": "KA-MED-77412"
+      },
+      "items": [
+        {
+          "medicine_id": "MED002",
+          "name": "Amoxicillin 250mg",
+          "batch_no": "AMX0825",
+          "mrp": 120,
+          "selling_price": 105,
+          "pack_size": 6,
+          "mrp_per_unit": 20,
+          "selling_price_per_unit": 17.5,
+          "expiry_date": "2026-08-31",
+          "quantity": 1,
+          "total_mrp": 120,
+          "total_selling_rate": 105
+        }
+      ],
+      "mrp_total": 120,
+      "selling_rate_total": 105,
+      "discount_amount": 15
+    },
+    {
+      "_id": "SI003",
+      "invoice_no": "INV-1003",
+      "date": "2025-09-03",
+      "patient_details": {
+        "name": "Vikram Patel",
+        "mobile_no": "9988776655"
+      },
+      "doctor": {
+        "name": "Dr. Meena Joshi",
+        "liscense_no": "MH-MED-33654"
+      },
+      "items": [
+        {
+          "medicine_id": "MED003",
+          "name": "Cetirizine 10mg",
+          "batch_no": "CTR0725",
+          "mrp": 25,
+          "selling_price": 22,
+          "pack_size": 10,
+          "mrp_per_unit": 2.5,
+          "selling_price_per_unit": 2.2,
+          "expiry_date": "2026-07-31",
+          "quantity": 3,
+          "total_mrp": 75,
+          "total_selling_rate": 66
+        }
+      ],
+      "mrp_total": 75,
+      "selling_rate_total": 66,
+      "discount_amount": 9
+    },
+    {
+      "_id": "SI004",
+      "invoice_no": "INV-1004",
+      "date": "2025-09-04",
+      "patient_details": {
+        "name": "Sneha Reddy",
+        "mobile_no": "9012345678"
+      },
+      "doctor": {
+        "name": "Dr. Ravi Teja",
+        "liscense_no": "TS-MED-99871"
+      },
+      "items": [
+        {
+          "medicine_id": "MED004",
+          "name": "Pantoprazole 40mg",
+          "batch_no": "PAN0625",
+          "mrp": 95,
+          "selling_price": 85,
+          "pack_size": 10,
+          "mrp_per_unit": 9.5,
+          "selling_price_per_unit": 8.5,
+          "expiry_date": "2026-06-30",
+          "quantity": 2,
+          "total_mrp": 190,
+          "total_selling_rate": 170
+        }
+      ],
+      "mrp_total": 190,
+      "selling_rate_total": 170,
+      "discount_amount": 20
+    },
+    {
+      "_id": "SI005",
+      "invoice_no": "INV-1005",
+      "date": "2025-09-05",
+      "patient_details": {
+        "name": "Imran Ali",
+        "mobile_no": "9345678123"
+      },
+      "doctor": {
+        "name": "Dr. Farah Naz",
+        "liscense_no": "UP-MED-66432"
+      },
+      "items": [
+        {
+          "medicine_id": "MED005",
+          "name": "Azithromycin 500mg",
+          "batch_no": "AZT0525",
+          "mrp": 150,
+          "selling_price": 135,
+          "pack_size": 3,
+          "mrp_per_unit": 50,
+          "selling_price_per_unit": 45,
+          "expiry_date": "2026-05-31",
+          "quantity": 1,
+          "total_mrp": 150,
+          "total_selling_rate": 135
+        }
+      ],
+      "mrp_total": 150,
+      "selling_rate_total": 135,
+      "discount_amount": 15
+    },
+    {
+      "_id": "SI006",
+      "invoice_no": "INV-1006",
+      "date": "2025-09-06",
+      "patient_details": {
+        "name": "Pooja Verma",
+        "mobile_no": "9090909090"
+      },
+      "doctor": {
+        "name": "Dr. Nikhil Singh",
+        "liscense_no": "RJ-MED-11223"
+      },
+      "items": [
+        {
+          "medicine_id": "MED006",
+          "name": "Vitamin C Tablets",
+          "batch_no": "VIT0425",
+          "mrp": 60,
+          "selling_price": 55,
+          "pack_size": 20,
+          "mrp_per_unit": 3,
+          "selling_price_per_unit": 2.75,
+          "expiry_date": "2027-04-30",
+          "quantity": 1,
+          "total_mrp": 60,
+          "total_selling_rate": 55
+        }
+      ],
+      "mrp_total": 60,
+      "selling_rate_total": 55,
+      "discount_amount": 5
+    }
   ]
 }
